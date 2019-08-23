@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tcpdump on Tech Log</title>
+    <link>http://amehta.github.io/tags/tcpdump/</link>
+    <description>Recent content in tcpdump on Tech Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 10 Sep 2011 00:08:00 -0800</lastBuildDate>
+    
+	<atom:link href="http://amehta.github.io/tags/tcpdump/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dropbox: LAN Sync Protocol</title>
+      <link>http://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</link>
+      <pubDate>Sat, 10 Sep 2011 00:08:00 -0800</pubDate>
+      
+      <guid>http://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</guid>
+      <description>A year ago, I fired up wire shark on my home network to check out the packet flow of the DHCP process. I closed all my browser windows and other chat/im services, and still noticed a lot of chatter on the network. One that got my particular attention was a packet that was related to the popular service dropbox. I had not updated/edited any files recently, so was surprised to see it.</description>
+    </item>
+    
+  </channel>
+</rss>

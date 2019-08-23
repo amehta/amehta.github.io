@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>opencv on Tech Log</title>
+    <link>http://amehta.github.io/tags/opencv/</link>
+    <description>Recent content in opencv on Tech Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 22 Aug 2019 23:08:06 -0700</lastBuildDate>
+    
+	<atom:link href="http://amehta.github.io/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Adding text to an image using OpenCV and Python</title>
+      <link>http://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</link>
+      <pubDate>Thu, 22 Aug 2019 23:08:06 -0700</pubDate>
+      
+      <guid>http://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</guid>
+      <description>In a series of upcoming blog posts, I will be using OpenCV to manipulate images. In this post, I will be adding text to an image (below), I took of a Dervish monastery at the beautiful village of Blagaj in Bosnia.
+   Resized Original Resized Original w/ text          Lets get started.
+ Read Image Resize Image by aspect ratio Add text to resized image Save resized image with text  1.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>unix on Tech Log</title>
+    <link>http://amehta.github.io/tags/unix/</link>
+    <description>Recent content in unix on Tech Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 11 Mar 2019 00:21:00 -0800</lastBuildDate>
+    
+	<atom:link href="http://amehta.github.io/tags/unix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WC implementation in Go Lang</title>
+      <link>http://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</link>
+      <pubDate>Mon, 11 Mar 2019 00:21:00 -0800</pubDate>
+      
+      <guid>http://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</guid>
+      <description>Continuing the theme of exploring Go Lang, today I will be writing a simple version of the Unix utility wc that displays the number of lines, words, and bytes contained in each input file.
+This exploration process will involve the following pieces * Getting a file name from command line. os * Opening the file for reading. os * Reading the contents of the file. bufio * Count the lines, words and bytes.</description>
+    </item>
+    
+    <item>
+      <title>Exploring filesystem in golang</title>
+      <link>http://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</link>
+      <pubDate>Wed, 06 Mar 2019 00:12:00 -0800</pubDate>
+      
+      <guid>http://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</guid>
+      <description>I am currently dabbling in GoLang and trying to get familiar with it&amp;rsquo;s syntax and style of programming. I also want to get familiar with the built-in packages for basic tasks witout having to google for basic features.
+In this post I will be working my way up to building a simple program that can list the files of a given path to it as a command line argument.</description>
+    </item>
+    
+    <item>
+      <title>ls implementation in python3</title>
+      <link>http://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</link>
+      <pubDate>Thu, 28 Feb 2019 00:08:00 -0800</pubDate>
+      
+      <guid>http://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</guid>
+      <description>&amp;ldquo;ls&amp;rdquo; is unix utility that lists the files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the ls command line utility.
+Some basic information First, we execute ls command line utility to get some preliminary information of a directory. Here is an example of the output from the ls command on a sample directory.</description>
+    </item>
+    
+  </channel>
+</rss>

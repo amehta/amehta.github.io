@@ -1,0 +1,855 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Tech Log</title>
+        <link>http://amehta.github.io/posts/</link>
+        <description>Recent content in Posts on Tech Log</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Thu, 22 Aug 2019 23:08:06 -0700</lastBuildDate>
+        <atom:link href="http://amehta.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Adding text to an image using OpenCV and Python</title>
+            <link>http://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</link>
+            <pubDate>Thu, 22 Aug 2019 23:08:06 -0700</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</guid>
+            <description>In a series of upcoming blog posts, I will be using OpenCV to manipulate images. In this post, I will be adding text to an image (below), I took of a Dervish monastery at the beautiful village of Blagaj in Bosnia.
+   Resized Original Resized Original w/ text          Lets get started.
+ Read Image Resize Image by aspect ratio Add text to resized image Save resized image with text  1.</description>
+            <content type="html"><![CDATA[
+
+<p>In a series of upcoming blog posts, I will be using OpenCV to manipulate images. In this post, I will be adding text to an image (below), I took of a Dervish monastery at the beautiful village of Blagaj in Bosnia.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Resized Original</th>
+<th align="center">Resized Original w/ text</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><img src="/img/blagaj_resized.jpg" alt="Blagaj" /></td>
+<td align="center"><img src="/img/blagaj_resized_text.jpg" alt="Blagaj" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>Lets get started.</p>
+
+<ul>
+<li>Read Image</li>
+<li>Resize Image by aspect ratio</li>
+<li>Add text to resized image</li>
+<li>Save resized image with text</li>
+</ul>
+
+<h3 id="1-cv2-imread-read-an-image">1. <code>cv2.imread()</code> - Read an Image</h3>
+
+<p>The function <code>cv2.imread()</code> takes a path to the image file and reads it into a variable for further computations. You can use <code>cv2.imshow()</code> to display the image. However, the execution would be so fast,
+that you won&rsquo;t be able to see the picture loaded. Hence, you would want to pause the program while it&rsquo;s displaying the image using <code>cv2.waitKey()</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> cv2
+
+image <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;blagaj_original.jpg&#39;</span>
+img <span style="color:#f92672">=</span>  cv2<span style="color:#f92672">.</span>imread(image)
+
+cv2<span style="color:#f92672">.</span>imshow(<span style="color:#e6db74">&#34;Original&#34;</span>, img)
+cv2<span style="color:#f92672">.</span>waitKey(<span style="color:#ae81ff">0</span>)</code></pre></div>
+<h3 id="2-cv2-resize-resize-an-image-by-aspect-ratio">2. <code>cv2.resize()</code> - Resize an Image by aspect ratio</h3>
+
+<p>Sometimes, the images are too big and would like to resize them. There is a handy function
+to help you do the same <code>cv2.resize()</code>.</p>
+
+<p>The function takes the loaded image along with a tuple that represents the new desired dimensions
+of the image.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">new_dimension <span style="color:#f92672">=</span> (<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>)
+img_resized <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>resize(img, new_dimension)</code></pre></div>
+<p>The above code snippet does it&rsquo;s job, but the primary issue you will notice is that the image might get distorted if it&rsquo;s not a perfect square image of equal width and height. To overcome it, we can calculate
+the aspect ratio of the original image and scale it down accordingly.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">height, width, depth <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>shape
+desired_height <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span>
+aspect_ratio <span style="color:#f92672">=</span> desired_height<span style="color:#f92672">/</span>width
+dimension <span style="color:#f92672">=</span> (desired_height, height<span style="color:#f92672">*</span>aspect_ratio)
+img_resized <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>resize(img, dimension)</code></pre></div>
+<h3 id="3-cv2-puttext-add-text-to-resized-image">3. <code>cv2.putText()</code> - Add text to resized image</h3>
+
+<p>Now, lets get to the meat of the post - adding text to the image. This can again be simply added using the function <code>cv2.putText()</code></p>
+
+<p>It takes in parameters for the positioning and customization of the text (font, format, color, size) in the image.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BLACK <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">255</span>)
+font <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>FONT_HERSHEY_SIMPLEX
+font_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.1</span>
+font_color <span style="color:#f92672">=</span> BLACK
+font_thickness <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;amehta.github.io&#39;</span>
+x,y <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">650</span>
+img_text <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>putText(img_resized, text, (x,y), font, font_size, font_color, font_thickness, cv2<span style="color:#f92672">.</span>LINE_AA)</code></pre></div>
+<h3 id="4-cv2-imwrite-save-resized-image-with-text">4. <code>cv2.imwrite()</code> - Save resized image with text</h3>
+
+<p>Lastly, we would like to save the modified image to a file for sharing. The function <code>cv2.imwrite()</code> takes care of it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cv2<span style="color:#f92672">.</span>imwrite(<span style="color:#e6db74">&#39;blagaj_resized_text.jpg&#39;</span>,img_text)</code></pre></div>
+<h3 id="full-program-listing">Full program listing</h3>
+
+<p>Here is the full program listing</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> cv2
+
+image <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;blagaj_original.jpg&#39;</span>
+img <span style="color:#f92672">=</span>  cv2<span style="color:#f92672">.</span>imread(image)
+
+height, width, depth <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>shape
+desired_height <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span>
+aspect_ratio <span style="color:#f92672">=</span> desired_height<span style="color:#f92672">/</span>width
+dimension <span style="color:#f92672">=</span> (desired_height, int(height<span style="color:#f92672">*</span>aspect_ratio) )
+img_resized <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>resize(img, dimension)
+
+BLACK <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">255</span>)
+font <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>FONT_HERSHEY_SIMPLEX
+font_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.1</span>
+font_color <span style="color:#f92672">=</span> BLACK
+font_thickness <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;amehta.github.io&#39;</span>
+x,y <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">650</span>
+img_text <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>putText(img_resized, text, (x,y), font, font_size, font_color, font_thickness, cv2<span style="color:#f92672">.</span>LINE_AA)
+
+cv2<span style="color:#f92672">.</span>imshow(<span style="color:#e6db74">&#34;Resized&#34;</span>, img_text)
+cv2<span style="color:#f92672">.</span>waitKey(<span style="color:#ae81ff">0</span>)
+
+cv2<span style="color:#f92672">.</span>imwrite(<span style="color:#e6db74">&#39;blagaj_resized_text.jpg&#39;</span>,img_text)</code></pre></div>
+<p>Stay tunes for more posts on OpenCV.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>WC implementation in Go Lang</title>
+            <link>http://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</link>
+            <pubDate>Mon, 11 Mar 2019 00:21:00 -0800</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</guid>
+            <description>Continuing the theme of exploring Go Lang, today I will be writing a simple version of the Unix utility wc that displays the number of lines, words, and bytes contained in each input file.
+This exploration process will involve the following pieces * Getting a file name from command line. os * Opening the file for reading. os * Reading the contents of the file. bufio * Count the lines, words and bytes.</description>
+            <content type="html"><![CDATA[
+
+<p>Continuing the theme of exploring <a href="https://golang.org/" target="_blank">Go Lang</a>, today I will be writing a simple version
+of the <code>Unix</code> utility <code>wc</code> that displays the number of lines, words, and bytes contained in each
+input file.</p>
+
+<p>This exploration process will involve the following pieces
+* Getting a file name from command line. <a href="https://golang.org/pkg/os/" target="_blank">os</a>
+* Opening the file for reading. <a href="https://golang.org/pkg/os/" target="_blank">os</a>
+* Reading the contents of the file. <a href="https://golang.org/pkg/bufio/" target="_blank">bufio</a>
+* Count the lines, words and bytes. <a href="https://golang.org/pkg/unicode/" target="_blank">unicode</a>
+* Display the results.</p>
+
+<h1 id="1-read-filename-from-the-commandline">1. Read filename from the commandline</h1>
+
+<p>Any arguments typed after the programs named are passed into the <a href="https://golang.org/pkg/os/" target="_blank"><code>os.Args</code></a> array
+with the name of the program accessible at the first index.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fileName</span> <span style="color:#66d9ef">string</span>
+<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>) &gt; <span style="color:#ae81ff">1</span> {
+    <span style="color:#a6e22e">fileName</span> = <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>[<span style="color:#ae81ff">1</span>]
+} <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Please pass a file name&#34;</span>)
+    <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Exit</span>(<span style="color:#ae81ff">1</span>)
+}</code></pre></div>
+<h1 id="2-open-the-file">2. Open the file</h1>
+
+<p>Once you have the name of the file, it can be simply opened using the <code>&quot;os.Open()&quot;</code> function
+in the <a href="https://golang.org/pkg/os/" target="_blank"><code>os</code></a> package. If the open fails, the error string will be self-explanatory.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">file</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">fileName</span>)
+<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Err &#34;</span>, <span style="color:#a6e22e">err</span>)
+}</code></pre></div>
+<p><code>#</code>🤓 Explore the <a href="https://golang.org/pkg/os/" target="_blank"><code>os</code></a> package as part of getting familiar with <a href="https://golang.org/" target="_blank">Go Lang</a>.</p>
+
+<h1 id="3-read-the-contents-of-the-file">3. Read the contents of the file</h1>
+
+<p>There are quite a few ways of reading the contents of the file. In this post I will be using the <a href="https://golang.org/pkg/bufio/" target="_blank"><code>bufio</code></a> package to read the contents of the file line by line using <code>NewScanner()</code>.</p>
+
+<p>In the code snippet below, we are scanning the file line by line and printing the output to the console.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">scanner</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">bufio</span>.<span style="color:#a6e22e">NewScanner</span>(<span style="color:#a6e22e">file</span>)
+<span style="color:#a6e22e">lines</span>, <span style="color:#a6e22e">words</span>, <span style="color:#a6e22e">characters</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">scanner</span>.<span style="color:#a6e22e">Scan</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">scanner</span>.<span style="color:#a6e22e">Text</span>())
+}</code></pre></div>
+<h1 id="4-analyze-the-file-content">4. Analyze the file content</h1>
+
+<p>Finally, we need to keep track of the lines in the file, and the number
+or words in each line.</p>
+
+<p>The total byte/characters will be the summation of length of each line
+we iterate while reading the file. And to compute the number of words
+we can simply split the line based on <code>whitespace</code> and count the total
+number of such splits.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">scanner</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">bufio</span>.<span style="color:#a6e22e">NewScanner</span>(<span style="color:#a6e22e">file</span>)
+<span style="color:#a6e22e">lines</span>, <span style="color:#a6e22e">words</span>, <span style="color:#a6e22e">characters</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">scanner</span>.<span style="color:#a6e22e">Scan</span>() {
+    <span style="color:#a6e22e">lines</span><span style="color:#f92672">++</span>
+
+    <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">scanner</span>.<span style="color:#a6e22e">Text</span>()
+    <span style="color:#a6e22e">characters</span> <span style="color:#f92672">+=</span> len(<span style="color:#a6e22e">line</span>)
+
+    <span style="color:#a6e22e">splitLines</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">line</span>, <span style="color:#e6db74">&#34; &#34;</span>)
+    <span style="color:#a6e22e">words</span> <span style="color:#f92672">+=</span> len(<span style="color:#a6e22e">splitLines</span>)
+}</code></pre></div>
+<h1 id="4-display">4. Display</h1>
+
+<p>Once, we have compute the word count, it can be displayed on the cosole using
+the <a href="https://golang.org/pkg/os/" target="_blank"><code>fmt</code></a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%8d%8d%8d %s\n&#34;</span>, <span style="color:#a6e22e">lines</span>, <span style="color:#a6e22e">words</span>, <span style="color:#a6e22e">characters</span>, <span style="color:#a6e22e">fileName</span>)</code></pre></div>
+<h1 id="full-program-listing">Full program listing</h1>
+
+<p>This is the complete listing of the program implementing the <code>WC</code> utility in <a href="https://golang.org/" target="_blank">Go Lang</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;bufio&#34;</span>
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;os&#34;</span>
+	<span style="color:#e6db74">&#34;strings&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fileName</span> <span style="color:#66d9ef">string</span>
+    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>) &gt; <span style="color:#ae81ff">1</span> {
+        <span style="color:#a6e22e">fileName</span> = <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>[<span style="color:#ae81ff">1</span>]
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Please pass a file name&#34;</span>)
+        <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Exit</span>(<span style="color:#ae81ff">1</span>)
+    }
+    <span style="color:#a6e22e">file</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">fileName</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Err &#34;</span>, <span style="color:#a6e22e">err</span>)
+    }
+    <span style="color:#a6e22e">scanner</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">bufio</span>.<span style="color:#a6e22e">NewScanner</span>(<span style="color:#a6e22e">file</span>)
+    <span style="color:#a6e22e">lines</span>, <span style="color:#a6e22e">words</span>, <span style="color:#a6e22e">characters</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">scanner</span>.<span style="color:#a6e22e">Scan</span>() {
+        <span style="color:#a6e22e">lines</span><span style="color:#f92672">++</span>
+
+        <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">scanner</span>.<span style="color:#a6e22e">Text</span>()
+        <span style="color:#a6e22e">characters</span> <span style="color:#f92672">+=</span> len(<span style="color:#a6e22e">line</span>)
+
+        <span style="color:#a6e22e">splitLines</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">line</span>, <span style="color:#e6db74">&#34; &#34;</span>)
+        <span style="color:#a6e22e">words</span> <span style="color:#f92672">+=</span> len(<span style="color:#a6e22e">splitLines</span>)
+    }
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%8d%8d%8d %s\n&#34;</span>, <span style="color:#a6e22e">lines</span>, <span style="color:#a6e22e">words</span>, <span style="color:#a6e22e">characters</span>, <span style="color:#a6e22e">fileName</span>)
+}</code></pre></div>
+<p><code>#</code>🤓 Explore the <code>wc</code> utility and try to finish up the missing pieces.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Exploring filesystem in golang</title>
+            <link>http://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</link>
+            <pubDate>Wed, 06 Mar 2019 00:12:00 -0800</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</guid>
+            <description>I am currently dabbling in GoLang and trying to get familiar with it&amp;rsquo;s syntax and style of programming. I also want to get familiar with the built-in packages for basic tasks witout having to google for basic features.
+In this post I will be working my way up to building a simple program that can list the files of a given path to it as a command line argument.</description>
+            <content type="html"><![CDATA[
+
+<p>I am currently dabbling in <a href="https://golang.org/" target="_blank">GoLang</a> and trying to get familiar with it&rsquo;s syntax and style of programming. I also want to get familiar with the built-in packages for basic tasks witout having to google for basic features.</p>
+
+<p>In this post I will be working my way up to building a simple program that can list the files of a given path to it as a command line argument.</p>
+
+<h4 id="1-print-to-console">1. Print to console</h4>
+
+<p>Lets start with a simple program that can print a statement to the console using the <a href="https://golang.org/pkg/os/" target="_blank"><code>&quot;fmt&quot; package</code></a> and the <code>&quot;Println()&quot; fucntion</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Welcome to Go!&#34;</span>)
+}
+<span style="color:#960050;background-color:#1e0010">#</span>=&gt; <span style="color:#a6e22e">Welcome</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">Go</span>!</code></pre></div>
+<h4 id="2-read-arguments-from-commandline">2. Read arguments from commandline</h4>
+
+<p>Now, lets learn to read the command line arguments to the program using the <a href="https://golang.org/pkg/os/" target="_blank"><code>&quot;os&quot; package</code></a> and <code>Args</code> variable that stores them as an array of strings starting with the program name as the first element.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;os&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>) &gt; <span style="color:#ae81ff">1</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Arguments:&#34;</span>, <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>[<span style="color:#ae81ff">1</span>])
+	} <span style="color:#66d9ef">else</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;No Arguments provided&#34;</span>)
+	}
+}
+<span style="color:#960050;background-color:#1e0010">#</span>=&gt; <span style="color:#a6e22e">Apurvas</span><span style="color:#f92672">-</span><span style="color:#a6e22e">MacBook</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Pro</span>:<span style="color:#a6e22e">OSManipulation</span> <span style="color:#a6e22e">apurva</span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">run</span> <span style="color:#a6e22e">CommandLineArgs</span>.<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">Hello</span>
+<span style="color:#a6e22e">Arguments</span>: <span style="color:#a6e22e">Hello</span>
+
+<span style="color:#960050;background-color:#1e0010">#</span>=&gt; <span style="color:#a6e22e">Apurvas</span><span style="color:#f92672">-</span><span style="color:#a6e22e">MacBook</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Pro</span>:<span style="color:#a6e22e">OSManipulation</span> <span style="color:#a6e22e">apurva</span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">run</span> <span style="color:#a6e22e">CommandLineArgs</span>.<span style="color:#66d9ef">go</span>
+<span style="color:#a6e22e">No</span> <span style="color:#a6e22e">Arguments</span> <span style="color:#a6e22e">provided</span></code></pre></div>
+<h4 id="3-traversing-the-listings-of-a-path">3. Traversing the listings of a path</h4>
+
+<p>Finally, we need to be able to discover all the file/directory listings for a given path passed as a command line argument.</p>
+
+<p>This can be conveniently achieved using the <code>ReadDir() function</code> of the <a href="https://golang.org/pkg/io/ioutil" target="_blank"><code>&quot;io/ioutil&quot; package</code></a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;io/ioutil&#34;</span>
+	<span style="color:#e6db74">&#34;os&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">files</span> []<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">FileInfo</span>
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>
+	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>) &gt; <span style="color:#ae81ff">1</span> {
+		<span style="color:#a6e22e">files</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">ReadDir</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>[<span style="color:#ae81ff">1</span>])
+	} <span style="color:#66d9ef">else</span> {
+		<span style="color:#a6e22e">files</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">ReadDir</span>(<span style="color:#e6db74">&#34;.&#34;</span>)
+	}
+
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Err &#34;</span>, <span style="color:#a6e22e">err</span>)
+	}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">file</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">files</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">Mode</span>())
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34; &#34;</span>, <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">Size</span>())
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34; &#34;</span>, <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">Name</span>())
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>()
+	}
+}</code></pre></div>
+<p>The <code>ReadDir()</code> returns a list of directory entries sorted by filename.</p>
+
+<p><code>#</code>🤓 Exploring further into <code>&quot;fmt&quot;, &quot;os&quot;, &quot;io/ioutil&quot;</code> to recreate a implementaion of the <code>&quot;ls&quot;</code> unix utility is left as an exercise for the reader.</p>
+
+<p><strong>PS:</strong> Also check out my blog post on recreating <code>&quot;ls&quot;</code> unix utility in [python3.][ls-python3]</p>
+
+<p><a href="../posts/2019/02/ls-implementation-in-python3/">ls-python3</a></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>ls implementation in python3</title>
+            <link>http://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</link>
+            <pubDate>Thu, 28 Feb 2019 00:08:00 -0800</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</guid>
+            <description>&amp;ldquo;ls&amp;rdquo; is unix utility that lists the files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the ls command line utility.
+Some basic information First, we execute ls command line utility to get some preliminary information of a directory. Here is an example of the output from the ls command on a sample directory.</description>
+            <content type="html"><![CDATA[
+
+<p><a href="http://en.wikipedia.org/wiki/Ls" target="_blank"><strong>&ldquo;ls&rdquo;</strong></a> is unix utility that lists the  files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the <strong><code>ls</code></strong> command line utility.</p>
+
+<h3 id="some-basic-information">Some basic information</h3>
+
+<p>First, we execute <strong><code>ls</code></strong> command line utility to get some preliminary information of a directory. Here is an example of the output from the <strong><code>ls</code></strong> command on a sample directory.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Apurvas<span style="color:#f92672">-</span>MacBook<span style="color:#f92672">-</span>Pro:Mango apurva<span style="color:#960050;background-color:#1e0010">$</span> ls
+Mango<span style="color:#f92672">.</span>db	app<span style="color:#f92672">.</span>py		config<span style="color:#f92672">.</span>py	model<span style="color:#f92672">.</span>py	sample_data<span style="color:#f92672">.</span>txt	src		templates</code></pre></div>
+<p>In order to accomplish this in python, you would need to import the built-in standard library <strong><code>os</code></strong> and pass a directorty path name to the function <strong><code>listdir()</code></strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_items_in_</span>(path):
+  <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(path):
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{entry}&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;	&#34;</span>)
+show_items_in_(<span style="color:#e6db74">&#34;.&#34;</span>)
+<span style="color:#75715e">#=&gt; </span>
+Apurvas<span style="color:#f92672">-</span>MacBook<span style="color:#f92672">-</span>Pro:Mango apurva<span style="color:#960050;background-color:#1e0010">$</span> python3<span style="color:#f92672">.</span><span style="color:#ae81ff">7</span> ls<span style="color:#f92672">.</span>py 
+config<span style="color:#f92672">.</span>py ls<span style="color:#f92672">.</span>py Mango<span style="color:#f92672">.</span>db model<span style="color:#f92672">.</span>py app<span style="color:#f92672">.</span>py templates sample_data<span style="color:#f92672">.</span>txt src </code></pre></div>
+<p><code>#</code>🤓 Formatting the ouput to match exactly like the native unix tool is left as an exercise for the reader. (Read about python f-strings)</p>
+
+<h3 id="a-tad-bit-more-details">A tad bit more details</h3>
+
+<p>Lets try another option <strong><code>ls -l</code></strong> to see the file listing with more details.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Apurvas<span style="color:#f92672">-</span>MacBook<span style="color:#f92672">-</span>Pro:Mango apurva<span style="color:#960050;background-color:#1e0010">$</span> ls <span style="color:#f92672">-</span>l
+total <span style="color:#ae81ff">24</span>
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span>  <span style="color:#ae81ff">1</span> apurva  staff    <span style="color:#ae81ff">0</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">14</span> Mango<span style="color:#f92672">.</span>db
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span>  <span style="color:#ae81ff">1</span> apurva  staff   <span style="color:#ae81ff">40</span> Mar  <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">15</span> app<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span>  <span style="color:#ae81ff">1</span> apurva  staff    <span style="color:#ae81ff">0</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">13</span> config<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span><span style="color:#960050;background-color:#1e0010">@</span> <span style="color:#ae81ff">1</span> apurva  staff  <span style="color:#ae81ff">138</span> Mar  <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">10</span> ls<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span>  <span style="color:#ae81ff">1</span> apurva  staff   <span style="color:#ae81ff">80</span> Mar  <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">15</span> model<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span>  <span style="color:#ae81ff">1</span> apurva  staff    <span style="color:#ae81ff">0</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">14</span> sample_data<span style="color:#f92672">.</span>txt
+drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x  <span style="color:#ae81ff">2</span> apurva  staff   <span style="color:#ae81ff">64</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">15</span> src
+drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x  <span style="color:#ae81ff">2</span> apurva  staff   <span style="color:#ae81ff">64</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">15</span> templates</code></pre></div>
+<p>In the above output from <strong><code>ls -l</code></strong> we get a lot more details like file permissions, the number of links or directorie, owner name, group name, file size (bytes), and time of modification apart from the name of the file.</p>
+
+<p>In python, we can start with separating out files and directories. This can be achieved by passing the output of <strong><code>os.listdir()</code></strong> to the functions <strong><code>os.path.isfile()</code></strong> and <strong><code>os.path.isdir()</code></strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_only_files_in_</span>(path):
+  <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(path):
+    <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile((entry)):
+      <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{entry}&#39;</span>)
+<span style="color:#75715e">#=&gt; config.py ls.py Mango.db model.py app.py sample_data.txt </span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_only_dirs_in_</span>(dir_path):
+  <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(dir_path):
+    <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isdir((entry)):
+      <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{entry}&#39;</span>)
+<span style="color:#75715e">#=&gt; templates src </span></code></pre></div>
+<p><code>#</code>🤓What other cool operations can we run from the <strong><code>os.path</code></strong> class? (Read the documentation <a href="https://docs.python.org/3/library/os.path.html" target="_blank">os-path-doc</a>)</p>
+
+<p>As you might have observed, we are able to glean a lot more information from the output of the command <strong><code>ls -l</code></strong>. We can get similar details about a file/directory using the <strong><code>os.stat()</code></strong> function. We also be importing the stat library to make sense of the output from <strong><code>os.stat()</code></strong>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_stats_of_items_in</span>(path):
+    total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(path):
+        statinfo <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>stat(entry)
+        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{statinfo} &#39;</span>)
+<span style="color:#75715e">#=&gt; Apurvas-MacBook-Pro:Mango apurva$ python3.7 ls.py </span>
+config<span style="color:#f92672">.</span>py os<span style="color:#f92672">.</span>stat_result(st_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">33188</span>, st_ino<span style="color:#f92672">=</span><span style="color:#ae81ff">8605068710</span>, st_dev<span style="color:#f92672">=</span><span style="color:#ae81ff">16777220</span>, st_nlink<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, st_uid<span style="color:#f92672">=</span><span style="color:#ae81ff">501</span>, st_gid<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, st_size<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, st_atime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551855990</span>, st_mtime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551855990</span>, st_ctime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551855990</span>) 
+<span style="color:#f92672">...</span>
+<span style="color:#f92672">...</span>
+src os<span style="color:#f92672">.</span>stat_result(st_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">16877</span>, st_ino<span style="color:#f92672">=</span><span style="color:#ae81ff">8605068718</span>, st_dev<span style="color:#f92672">=</span><span style="color:#ae81ff">16777220</span>, st_nlink<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, st_uid<span style="color:#f92672">=</span><span style="color:#ae81ff">501</span>, st_gid<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, st_size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, st_atime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551896296</span>, st_mtime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551388533</span>, st_ctime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551388533</span>) </code></pre></div>
+<p>The <strong><code>os.stat()</code></strong> gives us a lot of details about the path passed to it. Let&rsquo;s decode a few of the fields to make some sense out of it for us mortals.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> stat
+
+ <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_stats_of_items_in</span>(path):
+    <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(path):
+        statinfo <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>stat(entry)
+        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{stat.filemode(statinfo.st_mode)} &#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
+        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{entry}&#39;</span>)
+<span style="color:#f92672">=</span><span style="color:#75715e">#&gt; Apurvas-MacBook-Pro:Mango apurva$ python3.7 ls.py </span>
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> config<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> ls<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> Mango<span style="color:#f92672">.</span>db
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> model<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> app<span style="color:#f92672">.</span>py
+drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x templates
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> sample_data<span style="color:#f92672">.</span>txt
+drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x src</code></pre></div>
+<p>As a keen observer, you might have noticed that we have to first make a call to <strong><code>os.listdir()</code></strong> to get all the file/directory listings and then another call to <strong><code>os.stat()</code></strong> to get further details about them. Woudn&rsquo;t it be better if we can get both results in the same pass? Fortunatley in <strong><code>python3.6</code></strong> and above you can, using the function <strong><code>os.scandir()</code></strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_stats_of_items_in</span>(path):
+    total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>scandir():
+        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{stat.filemode(entry.stat().st_mode)} &#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
+        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{entry.name}&#39;</span>)
+<span style="color:#f92672">=</span><span style="color:#75715e">#&gt; Apurvas-MacBook-Pro:Mango apurva$ python3.7 ls.py </span>
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> config<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> ls<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> Mango<span style="color:#f92672">.</span>db
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> model<span style="color:#f92672">.</span>py
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> app<span style="color:#f92672">.</span>py
+drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x templates
+<span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> sample_data<span style="color:#f92672">.</span>txt
+drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x src</code></pre></div>
+<p><code>#</code>🤓 Formatting the ouput to match exactly like the output of the <strong><code>ls -l</code></strong> is left as an exercise for the reader. (Read about interpreting <strong><code>os.stat()</code></strong> attributes)</p>
+
+<p>Hope you had fun reading this and it inspires you to dig more into both <strong><code>Python</code></strong> and <strong><code>Unix</code></strong> utilities. I will update with a link to my implementation of <strong><code>ls</code></strong> here as well.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Using Python&#39;s map() AND reduce()</title>
+            <link>http://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</link>
+            <pubDate>Sun, 29 Jan 2012 00:08:00 -0800</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</guid>
+            <description>Sum of the Squares of the first 5 numbers In this post I will try to use the map() and reduce() functions to compute the sum of the squares of the first five numbers. The map() function takes a function and an iterable as a parameter. The items of the iterable are fed to the function to create a new list. The reduce() function also takes a function and an iterable as a parameter.</description>
+            <content type="html"><![CDATA[
+
+<h3 id="sum-of-the-squares-of-the-first-5-numbers">Sum of the Squares of the first 5 numbers</h3>
+
+<p>In this post I will try to use the <code>map()</code> and <code>reduce()</code> functions to compute the sum of the squares of the first five numbers. The <code>map()</code> function takes a function and an iterable as a parameter. The items of the iterable are fed to the function to create a new list. The <code>reduce()</code> function also takes a function and an iterable as a parameter. However, this takes two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value.</p>
+
+<p>So, the first 5 numbers are 1, 2, 3, 4, 5. And, the first task would be to find the the squares of each of these numbers. Lets start with writing a simple function that finds the square of a number.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sqr</span>(x):         
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>x</code></pre></div>
+<p>Now, that we know how to find the squares, lets write a function that can find the sum of two numbers.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum</span>(x,y):         
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">+</span>y</code></pre></div>
+<p>We can get the first 5 numbers using the <code>range()</code> function into a list. The next step would be to find the square of each numbers. This can be achieved by passing each of the elements from the list into the <code>sqr()</code> function using python’s built-in <code>map()</code> function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>)     
+squares <span style="color:#f92672">=</span> map(sqr, a)</code></pre></div>
+<p>Once, we have the the squares in a list, we would now want to add each of these items to find the sum of the squares.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sum_of_squares <span style="color:#f92672">=</span> reduce(sum, squares)</code></pre></div>
+<p>The full program listing</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>)      
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sqr</span>(x):         
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>x      
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum</span>(x,y):         
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">+</span>y     
+
+squares <span style="color:#f92672">=</span> map(sqr, a)     
+sum_of_squares <span style="color:#f92672">=</span> reduce(sum, squares)</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>What is memoization?</title>
+            <link>http://amehta.github.io/posts/2012/01/what-is-memoization/</link>
+            <pubDate>Sat, 07 Jan 2012 00:08:00 -0800</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2012/01/what-is-memoization/</guid>
+            <description>Memoization is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.
+Now, lets try to walk this concept using a Fibonacci series where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&amp;rsquo;th term in the series.</description>
+            <content type="html"><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Memoization" target="_blank"><code>Memoization</code></a> is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.</p>
+
+<p>Now, lets try to walk this concept using a <a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank"><code>Fibonacci series</code></a> where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&rsquo;th term in the series.</p>
+
+<p><code>Fibonacci Series -&gt; 0, 1, 1, 2, 3, 5, 8, ....</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fib</span>(n):
+    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span> 
+    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">return</span> fib(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>fib(n<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)    
+
+{<span style="color:#f92672">%</span> endhighlight <span style="color:#f92672">%</span>}</code></pre></div>
+<p>So,
+F(7) = F(6) + F(5)
+       = [F(5) + F(4)] + [F(4) + F(3)]
+       = [[F(4) + F(3)] + [F(3) + F(2)]] + [[F(3)+ F(2)] + [F(2)+F(1)]]<br />
+       = [[[F(3)+F(2)] + [F(2)+F(1)]] + [[F(2)+F(1)] + [F(1)+F(0)]]] + [[F(3)+ F(2)] + [F(2)+F(1)]]
+       = &hellip;
+       = 8</p>
+
+<pre><code>
+
+If you notice, we are computing the `fib()` for all the positions less than 'N' from scratch to compute the `fib(N)`. And we could have easily stopped this process earlier if we had some of the values computed beforehand.
+
+So, lets try our hand at coding a memoized version of `fibonacci` below.
+
+{% highlight python %}
+
+fib_list = [0,1]
+def fib_mem(n):
+    if len(fib_list) &gt; n:
+        return fib_list[n] 
+    fib_val = fib_mem(n-1) + fib_mem(n-2)
+    fib_list.append(fib_val) 
+    return fib_val   
+
+</code></pre>
+
+<p>In this new approach, we look for the value of f(n) in the list. If it exists we simply return it, else we compute it and store it in the list, so we can speed up future computations.</p>
+
+<p>I was amazed to see the improvement in the speed of the computation. Infact computing using the pure recursive method for values &gt; 39 was so slow, that I decided to not compute for N &gt; 39. And, the meomized version is blazingly fast.</p>
+
+<pre><code>=====Non Mem=====
+fibonacci(35) -&gt;  9227465
+T = 11.2710268497
+fibonacci(32) -&gt;  2178309
+T = 2.53484201431
+fibonacci(34) -&gt;  5702887
+T = 7.05076313019
+fibonacci(39) -&gt;  63245986
+T = 77.6575329304
+
+===== Mem=====
+fibonacci_mem(35) -&gt;  9227465
+T = 6.98566436768e-05
+fibonacci_mem(32) -&gt;  2178309
+T = 1.19209289551e-05
+fibonacci_mem(34) -&gt;  5702887
+T = 1.21593475342e-05
+fibonacci_mem(45) -&gt;  1134903170
+T = 2.50339508057e-05
+fibonacci_mem(55) -&gt;  139583862445
+T = 2.88486480713e-05
+fibonacci_mem(155) -&gt;  110560307156090817237632754212345
+T = 0.000208854675293
+</code></pre>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Flash cards using pygame</title>
+            <link>http://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</link>
+            <pubDate>Sun, 06 Nov 2011 00:08:00 -0800</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</guid>
+            <description>Flash Cards I am currently enrolled in a spanish class for beginners at the local community college. So, the other day one of the classmates who sits next to me asked if I was using flash cards to memorize the words. I mentioned that since I am pretty much in front of a computer all day, I will write a simple program to simulate a flash card.
+Today, I embarked upon writing the very first version of my flash card application using pygame.</description>
+            <content type="html"><![CDATA[
+
+<h3 id="flash-cards">Flash Cards</h3>
+
+<p>I am currently enrolled in a spanish class for beginners at the local community college. So, the other day one of the classmates who sits next to me asked if I was using <code>flash cards</code> to memorize the words. I mentioned that since I am pretty much in front of a computer all day, I will write a simple program to simulate a flash card.</p>
+
+<p>Today, I embarked upon writing the very first version of my <code>flash card</code> application using <a href="https://www.pygame.org/wiki/" target="_blank">pygame</a>. It’s a pretty simple program that reads a list of words from a text file and displays them in a small flash card sized window. It moves between the next and previous words using the Left/Right arrow keys. The translation between english and spanish can be toggled using the Up/Down arrow keys.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pygame
+<span style="color:#f92672">from</span> pygame.locals <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> sys
+<span style="color:#f92672">import</span> time
+
+WINWIDTH <span style="color:#f92672">=</span> <span style="color:#ae81ff">800</span>
+WINHEIGHT <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>
+
+HALF_WINWIDTH <span style="color:#f92672">=</span> int(WINWIDTH <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>)
+
+RUNNING <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+
+BGCOLOR <span style="color:#f92672">=</span> BRIGHTBLUE <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">170</span>, <span style="color:#ae81ff">255</span>)
+TEXTCOLOR <span style="color:#f92672">=</span> WHITE <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>)
+MEANINGCOLOR <span style="color:#f92672">=</span> MCOLOR <span style="color:#f92672">=</span> (<span style="color:#ae81ff">85</span>, <span style="color:#ae81ff">65</span>, <span style="color:#ae81ff">0</span>)
+
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    <span style="color:#66d9ef">global</span> MAINSURF, BASICFONT, MAINCLOCK
+    pygame<span style="color:#f92672">.</span>init()
+    MAINCLOCK <span style="color:#f92672">=</span> pygame<span style="color:#f92672">.</span>time<span style="color:#f92672">.</span>Clock()
+    MAINSURF <span style="color:#f92672">=</span> pygame<span style="color:#f92672">.</span>display<span style="color:#f92672">.</span>set_mode((WINWIDTH, WINHEIGHT))
+    pygame<span style="color:#f92672">.</span>display<span style="color:#f92672">.</span>set_caption(<span style="color:#e6db74">&#39;Lingua Flash Card&#39;</span>)
+    BASICFONT <span style="color:#f92672">=</span> pygame<span style="color:#f92672">.</span>font<span style="color:#f92672">.</span>Font(<span style="color:#e6db74">&#39;freesansbold.ttf&#39;</span>, <span style="color:#ae81ff">36</span>)
+
+    
+    topCoord <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
+    spanishText <span style="color:#f92672">=</span> []
+    englishText <span style="color:#f92672">=</span> []
+    file <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#34;lesson1.txt&#34;</span>)
+    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> file:
+        es_text, en_text <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;:&#34;</span>)
+        spanishText<span style="color:#f92672">.</span>append(es_text<span style="color:#f92672">.</span>strip())
+        englishText<span style="color:#f92672">.</span>append(en_text<span style="color:#f92672">.</span>strip())
+    list_len <span style="color:#f92672">=</span> len(spanishText)
+    <span style="color:#75715e"># These lists will hold the Pygame Surface and Rect objects of the text.                         </span>
+    instSpanishSurfs <span style="color:#f92672">=</span> []
+    instEnglishSurfs <span style="color:#f92672">=</span> []
+    instRects <span style="color:#f92672">=</span> []
+
+    <span style="color:#75715e"># Render the text and get the Pygame Surface and Rect objects of the text.                       </span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(spanishText)):
+        instSpanishSurfs<span style="color:#f92672">.</span>append(BASICFONT<span style="color:#f92672">.</span>render(spanishText[i], <span style="color:#ae81ff">1</span>, TEXTCOLOR))
+        textPos <span style="color:#f92672">=</span> instSpanishSurfs[i]<span style="color:#f92672">.</span>get_rect()
+
+    <span style="color:#75715e"># Render the text and get the Pygame Surface and Rect objects of the text.                       </span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(englishText)):
+        instEnglishSurfs<span style="color:#f92672">.</span>append(BASICFONT<span style="color:#f92672">.</span>render(englishText[i], <span style="color:#ae81ff">1</span>, MCOLOR))
+
+    textPos<span style="color:#f92672">.</span>top <span style="color:#f92672">=</span> topCoord <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span>
+    textPos<span style="color:#f92672">.</span>centerx <span style="color:#f92672">=</span> HALF_WINWIDTH
+
+    next <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    meaning <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+    <span style="color:#66d9ef">while</span> True:
+        <span style="color:#66d9ef">for</span> event <span style="color:#f92672">in</span> pygame<span style="color:#f92672">.</span>event<span style="color:#f92672">.</span>get():
+            <span style="color:#66d9ef">if</span> event<span style="color:#f92672">.</span>type <span style="color:#f92672">==</span> QUIT:
+                terminate()
+            <span style="color:#66d9ef">if</span> event<span style="color:#f92672">.</span>type <span style="color:#f92672">==</span> KEYDOWN:
+                <span style="color:#66d9ef">if</span> event<span style="color:#f92672">.</span>key <span style="color:#f92672">==</span> K_LEFT:
+                    next <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+                    <span style="color:#66d9ef">if</span> next <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>:
+                        next <span style="color:#f92672">=</span> list_len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+                <span style="color:#66d9ef">if</span> event<span style="color:#f92672">.</span>key <span style="color:#f92672">==</span> K_RIGHT:
+                    next <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+                    <span style="color:#66d9ef">if</span> next <span style="color:#f92672">&gt;</span> list_len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>:
+                        next <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+                <span style="color:#66d9ef">if</span> event<span style="color:#f92672">.</span>key <span style="color:#f92672">==</span> K_UP:
+                    meaning <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> 
+                <span style="color:#66d9ef">if</span> event<span style="color:#f92672">.</span>key <span style="color:#f92672">==</span> K_DOWN:
+                    meaning <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+
+        MAINSURF<span style="color:#f92672">.</span>fill(BGCOLOR)
+
+        <span style="color:#66d9ef">if</span> meaning <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+            MAINSURF<span style="color:#f92672">.</span>blit(instSpanishSurfs[next], textPos)
+        <span style="color:#66d9ef">elif</span> meaning <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+            MAINSURF<span style="color:#f92672">.</span>blit(instEnglishSurfs[next], textPos)
+
+        pygame<span style="color:#f92672">.</span>display<span style="color:#f92672">.</span>update()
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">terminate</span>():
+        pygame<span style="color:#f92672">.</span>quit()
+        sys<span style="color:#f92672">.</span>exit()
+
+    <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+        main()</code></pre></div>
+<h3 id="source">Source</h3>
+
+<p>I used the starpusher game posted at <code>‘the invent with python’</code> blog as an example. I plan to polish up and add some more functionality to the program, before pushing to my github account [github.com/amehta]</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Traceroute implementation using scapy</title>
+            <link>http://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</link>
+            <pubDate>Wed, 28 Sep 2011 00:08:00 -0800</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</guid>
+            <description>Traceroute Traceroute is a network diagnostic utility used for displaying the path taken by a packet to it&amp;rsquo;s destination. It uses the ICMP protocol to help traverse the path. Each IP packet has an 8 bit TTL field that gets decremented by every router on the path, to prevent the packet from indefinitely circulating the internet (or network). When the TTL value reaches zero an ICMP error &amp;lsquo;Time To Live Exceeded&amp;rsquo; is sent back to the sender.</description>
+            <content type="html"><![CDATA[
+
+<h3 id="traceroute">Traceroute</h3>
+
+<p><code>Traceroute</code> is a network diagnostic utility used for displaying the path taken by a packet to it&rsquo;s destination. It uses the <code>ICMP</code> protocol to help traverse the path. Each IP packet has an <code>8 bit TTL</code> field that gets decremented by every router on the path, to prevent the packet from indefinitely circulating the internet (or network).  When the TTL value reaches zero  an ICMP error &lsquo;Time To Live Exceeded&rsquo; is sent back to the sender.  We can use this fact to our advantage by discovering all the hops between the source and the destination.</p>
+
+<pre><code>Example:
+
+MyPC --- R1 --- R2 --- R3 --- R4 --- FavoriteServer
+
+</code></pre>
+
+<p>In the above example, we can discover R1 by sending an <code>ICMP(echo-request)</code> based IP packet starting with a <code>TTL value of 1</code> destined to the server. R1 will decrement the TTL, thereby reducing it to zero, which in turn will trigger the <code>ICMP error message TTL exceeded</code>. This error message is sent to the sending machine as an ICMP based IP packet. The source field of this IP packet will have the IP address of R1. We can repeate this exercise by incrementing the TTL value till we no longer get the error message and instead get an <code>ICMP echo-reply message</code> from the destination.</p>
+
+<p>I used <code>Scapy</code> a python based packet crafting library to create a bare bones version of <code>traceroute</code> as per the explanation above.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Python Program 
+
+<span style="color:#75715e">#traceroute.py</span>
+
+<span style="color:#f92672">from</span> scapy.all <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> sys
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    host <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>]
+   <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Tracroute &#34;</span>, host
+    flag <span style="color:#f92672">=</span> True
+    ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+    hops <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">while</span> flag:
+        ans, unans <span style="color:#f92672">=</span> sr(IP(dst<span style="color:#f92672">=</span>host,ttl<span style="color:#f92672">=</span>ttl)<span style="color:#f92672">/</span>ICMP())
+        <span style="color:#66d9ef">if</span> ans<span style="color:#f92672">.</span>res[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>type <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>: <span style="color:#75715e"># checking for  ICMP echo-reply</span>
+            flag <span style="color:#f92672">=</span> False
+        <span style="color:#66d9ef">else</span>:
+            hops<span style="color:#f92672">.</span>append(ans<span style="color:#f92672">.</span>res[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>src) <span style="color:#75715e"># storing the src ip from ICMP error message</span>
+            ttl <span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+    i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">for</span> hop <span style="color:#f92672">in</span> hops:
+        <span style="color:#66d9ef">print</span> i, <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> hop
+        i<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    main()</code></pre></div>
+<pre><code>Sample output 
+
+apurva$ sudo python2.5 taceroute.py google.com
+WARNING: No route found for IPv6 destination :: (no default route?)
+Tracroute  google.com
+Begin emission:
+.Finished to send 1 packets.
+..*
+Received 4 packets, got 1 answers, remaining 0 packets
+.... 
+
+1  192.168.0.1
+2  98.234.104.1
+3  68.85.190.245
+4  68.85.155.74
+5  68.86.91.225
+6  68.86.85.181
+7  68.86.86.122
+8  66.208.228.226
+9  72.14.232.136
+10  64.233.174.19
+</code></pre>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Dropbox: LAN Sync Protocol</title>
+            <link>http://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</link>
+            <pubDate>Sat, 10 Sep 2011 00:08:00 -0800</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</guid>
+            <description>A year ago, I fired up wire shark on my home network to check out the packet flow of the DHCP process. I closed all my browser windows and other chat/im services, and still noticed a lot of chatter on the network. One that got my particular attention was a packet that was related to the popular service dropbox. I had not updated/edited any files recently, so was surprised to see it.</description>
+            <content type="html"><![CDATA[
+
+<p>A year ago, I fired up wire shark on my home network to check out the packet flow of the <strong>DHCP process</strong>. I closed all my browser windows and other chat/im services, and still noticed a lot of chatter on the network. One that got my particular attention was a packet that was related to the popular service dropbox. I had not updated/edited any files recently, so was surprised to see it. I then decided to dig a little more on wire shark and with some google search came to the conclusion that it was a dropbox feature to sync data changes within the local network.</p>
+
+<p>Earlier today(yes 1 year later) I decided to spend some more time looking at the traces and try to figure out the details of the LAN sync protocol. After an hour or so I believe that the following steps are involved in Dropbox’s LAN syncing -</p>
+
+<h3 id="1-discovery-lan-sync-discovery-protocol">1. Discovery (LAN sync discovery protocol)</h3>
+
+<p>The dropnbox process running on your computer sends a UDP broadcast packet in the local network <code>every 30 seconds</code>. The source and destination port of the packet are set to <code>17500</code>. This UDP packet has some payload attached to it for identify itself to the receiver. It seems like a dictionary.</p>
+
+<pre><code>&quot;Text&quot;: {
+    &quot;host_int&quot;: 14xxxx52,
+    &quot;version&quot;: [1,8],
+    &quot;displayname&quot;: 14xxxx52,
+    &quot;port&quot;: 17500,
+    &quot;namespaces&quot;: [263xxxx, 152xxxxx, 152*****] 
+} 
+</code></pre>
+
+<p>The Macbook was sending every <code>30 seconds</code>. However, on my Win7 laptop, it seemed like there was an initial rampup time where intervals started with 22 seconds and only after 5 mins they became 30 seconds.</p>
+
+<h3 id="2-exchange-data-lan-sync-protocol">2. Exchange Data (LAN sync protocol)</h3>
+
+<p>If all the dropbox clients have LAN sync enabled, then each of them should be able to understand and respond to the Discovery packet (assuming it&rsquo;s able to distinguish between different user accounts. I believe it uses namespaces to identify them uniquely). This response packet called <strong>DB LAN sync</strong> <code>(DB-LSP)</code> is a TCP packet where the dropbox clients exchange data.</p>
+
+<p>This first <code>DB-LSP</code> based TCP packet is destined to the other client on <code>port 17500</code>. The source port is an ephemeral port (say 49373) to which the receiver will send its reply. These are set to <code>type 23</code>. My guess is that these basically exchange information if there is data to be synced or not between the clients. If there is data to be synced, there will be some configurations that need to be exchanged to send them securely/encrypted across the local network. This is probably sent using <strong>DB-LSP</strong> packets set to <code>type 22</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Dropbox LSP Sync Protocol
+
+   <span style="color:#ae81ff">0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">7</span>     <span style="color:#ae81ff">8</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">31</span>       <span style="color:#ae81ff">32</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">63</span>
+<span style="color:#f92672">+--------+-------------+--------------+</span>
+<span style="color:#f92672">|</span> TYPE   <span style="color:#f92672">|</span>    MAGIC    <span style="color:#f92672">|</span>   LENGTH     <span style="color:#f92672">|</span>
+<span style="color:#f92672">+--------+-------------+--------------+</span>
+<span style="color:#f92672">|</span>                                     <span style="color:#f92672">|</span>
+<span style="color:#f92672">|</span>              DATA                   <span style="color:#f92672">|</span>
+<span style="color:#f92672">+-------------------------------------+</span>
+
+TYPE: 
+    Decimal   Hex   Meaning
+           <span style="color:#ae81ff">20</span>       <span style="color:#ae81ff">14</span>    <span style="color:#f92672">&lt;</span>Unknown<span style="color:#f92672">&gt;</span>
+           <span style="color:#ae81ff">22</span>       <span style="color:#ae81ff">16</span>    Configuration
+           <span style="color:#ae81ff">23</span>       <span style="color:#ae81ff">17</span>    Data
+          <span style="color:#ae81ff">128</span>       <span style="color:#ae81ff">80</span>    <span style="color:#f92672">&lt;</span>Uknown<span style="color:#f92672">&gt;</span>
+
+MAGIC:
+    Decimal  Hex  
+    <span style="color:#ae81ff">769</span>      <span style="color:#ae81ff">0301</span></code></pre></div>
+<p>I quickly wrote this to share my notes on the analysis. Feel free to correct me in any of the assumptions. Also, pardon me for any spelling/grammar mistakes.</p>
+
+<p><strong>PS</strong>: If you would like to experiment this on your home network, you could use the following filter to get rid of the noise.</p>
+
+<p><code>udp.port == 17500 or (ip.addr==mahcine1-ip and ip.addr==machine2-ip)</code></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>How does DHCP work?</title>
+            <link>http://amehta.github.io/posts/2011/09/how-does-dhcp-work/</link>
+            <pubDate>Sat, 10 Sep 2011 00:08:00 -0800</pubDate>
+            
+            <guid>http://amehta.github.io/posts/2011/09/how-does-dhcp-work/</guid>
+            <description>What is DHCP ? DHCP is a protocol used to provide an IP address to a device. It is also used to configure additional networking related parameters on the device like subnet mask, router, domain name, and dns server.
+Why DHCP ? DHCP stands for dynamic host configuration protocol and so allows a device to get an IP address without any manual intervention as long as the dhcp client is enabled and running on the device.</description>
+            <content type="html"><![CDATA[
+
+<h3 id="what-is-dhcp">What is DHCP ?</h3>
+
+<p><code>DHCP</code> is a protocol used to provide an IP address to a device. It is also used to configure additional networking related parameters on the device like subnet mask, router, domain name, and dns server.</p>
+
+<h3 id="why-dhcp">Why DHCP ?</h3>
+
+<p><code>DHCP</code> stands for <code>dynamic host configuration protocol</code> and so allows a device to get an IP address without any manual intervention as long as the dhcp client is enabled and running on the device.</p>
+
+<p>Autoconfigure.
+No longer have to manually assign address and configurations on every device
+No conflicting IP addresses
+No longer have to track each and every ip address that was assigned.
+Reuse of IP addresses
+If an ip address is not in use, it can be used by some other device</p>
+
+<h3 id="how-it-works">How it works ?</h3>
+
+<p>Most devices on boot up do not have an IP address unless configured statically. To get to the network the device would need to first find a dhcp server to get an IP address. Since it does not know the address of the <strong>dhcp server</strong>, the <strong>dhcp client</strong> (running in the device) sends a UDP broadcast packet <code>(DHCP Discover)</code> in the network. All the devices in the network will see be able to see this packet and if there is one or more dhcp server<code>☨</code> in the network, they will respond back to the client with an offer <code>(DHCP offer)</code>. The <code>DHCP offer</code> includes an <strong>IP address</strong>, <strong>subnet mask</strong>, <strong>lease time</strong>, <strong>router</strong> and other parameters as configured on the server by an administrator or requested by the client.</p>
+
+<p>If multiple offers were received by the client, then it can decide which offer to accept and accordingly send a broadcast packet requesting <code>(DHCP Request)</code> an IP address from one of the offers. The dhcp server can identify themselves by the <code>&quot;transaction id&quot;</code> field in the request. All the other servers on receiving the request packet will withdraw their offers and return it back to their pool of addresses. The dhcp server that got selected by the client finally concludes the process by sending an acknowledgment <code>(DHCP Ack)</code> and any other information that the client may have requested.</p>
+
+<p><code>☨</code> If dhcp server is not in the same subnet, a dhcp relay-agent can be used to forward the request.</p>
+
+<h3 id="how-to-verify">How to verify ?</h3>
+
+<p>It&rsquo;s pretty easy to follow the <strong>DHCP Handshake</strong> on Wireshark. Since, all the handshake happens using broadcast packets, you can pretty much see any device trying to get an IP address using DHCP in your local network. Once you fire up Wireshark start taking live traces on your network interface. To filter out the other noise you can filter baded on a UDP port. <code>(DHCP server listens on port 67)</code>. Next take some other device (laptop, iPod, iPad,) in your local network and power it on. You should be able to immediately see the entire handshake on your Wireshark window. If you do not see the first two steps and only see the <code>DHCP Request</code>, and <code>DHCP Ack</code>, it probably means that your device already has a preconfigured ip address and is requesting the server to extends it&rsquo;s lease.</p>
+
+<h3 id="screenshot">Screenshot</h3>
+
+<p><code>Missing after porting blog to github pages</code></p>
+
+<h3 id="packet-flow">Packet Flow</h3>
+
+<p><a href="http://www.eventhelix.com/RealtimeMantra/Networking/DHCP.pdf" target="_blank">http://www.eventhelix.com/RealtimeMantra/Networking/DHCP.pdf</a></p>
+
+<h4 id="references">References</h4>
+
+<p><a href="http://tools.ietf.org/html/rfc2131" target="_blank">http://tools.ietf.org/html/rfc2131</a></p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
