@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pygame on Tech Log</title>
-    <link>http://amehta.github.io/tags/pygame/</link>
+    <link>https://amehta.github.io/tags/pygame/</link>
     <description>Recent content in pygame on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sun, 06 Nov 2011 00:08:00 -0800</lastBuildDate>
     
-	<atom:link href="http://amehta.github.io/tags/pygame/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://amehta.github.io/tags/pygame/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Flash cards using pygame</title>
-      <link>http://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</link>
+      <link>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</link>
       <pubDate>Sun, 06 Nov 2011 00:08:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</guid>
+      <guid>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</guid>
       <description>Flash Cards I am currently enrolled in a spanish class for beginners at the local community college. So, the other day one of the classmates who sits next to me asked if I was using flash cards to memorize the words. I mentioned that since I am pretty much in front of a computer all day, I will write a simple program to simulate a flash card.
 Today, I embarked upon writing the very first version of my flash card application using pygame.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ls on Tech Log</title>
-    <link>http://amehta.github.io/tags/ls/</link>
+    <link>https://amehta.github.io/tags/ls/</link>
     <description>Recent content in ls on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 28 Feb 2019 00:08:00 -0800</lastBuildDate>
     
-	<atom:link href="http://amehta.github.io/tags/ls/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://amehta.github.io/tags/ls/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ls implementation in python3</title>
-      <link>http://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</link>
+      <link>https://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</link>
       <pubDate>Thu, 28 Feb 2019 00:08:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</guid>
+      <guid>https://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</guid>
       <description>&amp;ldquo;ls&amp;rdquo; is unix utility that lists the files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the ls command line utility.
 Some basic information First, we execute ls command line utility to get some preliminary information of a directory. Here is an example of the output from the ls command on a sample directory.</description>
     </item>

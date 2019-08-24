@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Tech Log</title>
-    <link>http://amehta.github.io/tags/</link>
+    <link>https://amehta.github.io/tags/</link>
     <description>Recent content in Tags on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 22 Aug 2019 23:08:06 -0700</lastBuildDate>
     
-	<atom:link href="http://amehta.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://amehta.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>opencv</title>
-      <link>http://amehta.github.io/tags/opencv/</link>
+      <link>https://amehta.github.io/tags/opencv/</link>
       <pubDate>Thu, 22 Aug 2019 23:08:06 -0700</pubDate>
       
-      <guid>http://amehta.github.io/tags/opencv/</guid>
+      <guid>https://amehta.github.io/tags/opencv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>http://amehta.github.io/tags/python/</link>
+      <link>https://amehta.github.io/tags/python/</link>
       <pubDate>Thu, 22 Aug 2019 23:08:06 -0700</pubDate>
       
-      <guid>http://amehta.github.io/tags/python/</guid>
+      <guid>https://amehta.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>http://amehta.github.io/tags/golang/</link>
+      <link>https://amehta.github.io/tags/golang/</link>
       <pubDate>Mon, 11 Mar 2019 00:21:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/tags/golang/</guid>
+      <guid>https://amehta.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>unix</title>
-      <link>http://amehta.github.io/tags/unix/</link>
+      <link>https://amehta.github.io/tags/unix/</link>
       <pubDate>Mon, 11 Mar 2019 00:21:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/tags/unix/</guid>
+      <guid>https://amehta.github.io/tags/unix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ls</title>
-      <link>http://amehta.github.io/tags/ls/</link>
+      <link>https://amehta.github.io/tags/ls/</link>
       <pubDate>Thu, 28 Feb 2019 00:08:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/tags/ls/</guid>
+      <guid>https://amehta.github.io/tags/ls/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dynamic-programming</title>
-      <link>http://amehta.github.io/tags/dynamic-programming/</link>
+      <link>https://amehta.github.io/tags/dynamic-programming/</link>
       <pubDate>Sat, 07 Jan 2012 00:08:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/tags/dynamic-programming/</guid>
+      <guid>https://amehta.github.io/tags/dynamic-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>memoization</title>
-      <link>http://amehta.github.io/tags/memoization/</link>
+      <link>https://amehta.github.io/tags/memoization/</link>
       <pubDate>Sat, 07 Jan 2012 00:08:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/tags/memoization/</guid>
+      <guid>https://amehta.github.io/tags/memoization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pygame</title>
-      <link>http://amehta.github.io/tags/pygame/</link>
+      <link>https://amehta.github.io/tags/pygame/</link>
       <pubDate>Sun, 06 Nov 2011 00:08:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/tags/pygame/</guid>
+      <guid>https://amehta.github.io/tags/pygame/</guid>
       <description></description>
     </item>
     
     <item>
       <title>icmp</title>
-      <link>http://amehta.github.io/tags/icmp/</link>
+      <link>https://amehta.github.io/tags/icmp/</link>
       <pubDate>Wed, 28 Sep 2011 00:08:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/tags/icmp/</guid>
+      <guid>https://amehta.github.io/tags/icmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>traceroute</title>
-      <link>http://amehta.github.io/tags/traceroute/</link>
+      <link>https://amehta.github.io/tags/traceroute/</link>
       <pubDate>Wed, 28 Sep 2011 00:08:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/tags/traceroute/</guid>
+      <guid>https://amehta.github.io/tags/traceroute/</guid>
       <description></description>
     </item>
     

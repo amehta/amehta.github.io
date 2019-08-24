@@ -1,19 +1,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Tech Log</title>
-        <link>http://amehta.github.io/posts/</link>
+        <link>https://amehta.github.io/posts/</link>
         <description>Recent content in Posts on Tech Log</description>
         <generator>Hugo -- gohugo.io</generator>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
         <lastBuildDate>Thu, 22 Aug 2019 23:08:06 -0700</lastBuildDate>
-        <atom:link href="http://amehta.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://amehta.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>Adding text to an image using OpenCV and Python</title>
-            <link>http://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</link>
+            <link>https://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</link>
             <pubDate>Thu, 22 Aug 2019 23:08:06 -0700</pubDate>
             
-            <guid>http://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</guid>
+            <guid>https://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</guid>
             <description>In a series of upcoming blog posts, I will be using OpenCV to manipulate images. In this post, I will be adding text to an image (below), I took of a Dervish monastery at the beautiful village of Blagaj in Bosnia.
    Resized Original Resized Original w/ text          Lets get started.
  Read Image Resize Image by aspect ratio Add text to resized image Save resized image with text  1.</description>
@@ -123,10 +123,10 @@ cv2<span style="color:#f92672">.</span>imwrite(<span style="color:#e6db74">&#39;
         
         <item>
             <title>WC implementation in Go Lang</title>
-            <link>http://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</link>
+            <link>https://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</link>
             <pubDate>Mon, 11 Mar 2019 00:21:00 -0800</pubDate>
             
-            <guid>http://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</guid>
+            <guid>https://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</guid>
             <description>Continuing the theme of exploring Go Lang, today I will be writing a simple version of the Unix utility wc that displays the number of lines, words, and bytes contained in each input file.
 This exploration process will involve the following pieces * Getting a file name from command line. os * Opening the file for reading. os * Reading the contents of the file. bufio * Count the lines, words and bytes.</description>
             <content type="html"><![CDATA[
@@ -241,10 +241,10 @@ the <a href="https://golang.org/pkg/os/" target="_blank"><code>fmt</code></a>.</
         
         <item>
             <title>Exploring filesystem in golang</title>
-            <link>http://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</link>
+            <link>https://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</link>
             <pubDate>Wed, 06 Mar 2019 00:12:00 -0800</pubDate>
             
-            <guid>http://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</guid>
+            <guid>https://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</guid>
             <description>I am currently dabbling in GoLang and trying to get familiar with it&amp;rsquo;s syntax and style of programming. I also want to get familiar with the built-in packages for basic tasks witout having to google for basic features.
 In this post I will be working my way up to building a simple program that can list the files of a given path to it as a command line argument.</description>
             <content type="html"><![CDATA[
@@ -332,10 +332,10 @@ In this post I will be working my way up to building a simple program that can l
         
         <item>
             <title>ls implementation in python3</title>
-            <link>http://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</link>
+            <link>https://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</link>
             <pubDate>Thu, 28 Feb 2019 00:08:00 -0800</pubDate>
             
-            <guid>http://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</guid>
+            <guid>https://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</guid>
             <description>&amp;ldquo;ls&amp;rdquo; is unix utility that lists the files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the ls command line utility.
 Some basic information First, we execute ls command line utility to get some preliminary information of a directory. Here is an example of the output from the ls command on a sample directory.</description>
             <content type="html"><![CDATA[
@@ -442,10 +442,10 @@ drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x
         
         <item>
             <title>Using Python&#39;s map() AND reduce()</title>
-            <link>http://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</link>
+            <link>https://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</link>
             <pubDate>Sun, 29 Jan 2012 00:08:00 -0800</pubDate>
             
-            <guid>http://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</guid>
+            <guid>https://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</guid>
             <description>Sum of the Squares of the first 5 numbers In this post I will try to use the map() and reduce() functions to compute the sum of the squares of the first five numbers. The map() function takes a function and an iterable as a parameter. The items of the iterable are fed to the function to create a new list. The reduce() function also takes a function and an iterable as a parameter.</description>
             <content type="html"><![CDATA[
 
@@ -479,10 +479,10 @@ sum_of_squares <span style="color:#f92672">=</span> reduce(sum, squares)</code><
         
         <item>
             <title>What is memoization?</title>
-            <link>http://amehta.github.io/posts/2012/01/what-is-memoization/</link>
+            <link>https://amehta.github.io/posts/2012/01/what-is-memoization/</link>
             <pubDate>Sat, 07 Jan 2012 00:08:00 -0800</pubDate>
             
-            <guid>http://amehta.github.io/posts/2012/01/what-is-memoization/</guid>
+            <guid>https://amehta.github.io/posts/2012/01/what-is-memoization/</guid>
             <description>Memoization is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.
 Now, lets try to walk this concept using a Fibonacci series where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&amp;rsquo;th term in the series.</description>
             <content type="html"><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Memoization" target="_blank"><code>Memoization</code></a> is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.</p>
@@ -557,10 +557,10 @@ T = 0.000208854675293
         
         <item>
             <title>Flash cards using pygame</title>
-            <link>http://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</link>
+            <link>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</link>
             <pubDate>Sun, 06 Nov 2011 00:08:00 -0800</pubDate>
             
-            <guid>http://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</guid>
+            <guid>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</guid>
             <description>Flash Cards I am currently enrolled in a spanish class for beginners at the local community college. So, the other day one of the classmates who sits next to me asked if I was using flash cards to memorize the words. I mentioned that since I am pretty much in front of a computer all day, I will write a simple program to simulate a flash card.
 Today, I embarked upon writing the very first version of my flash card application using pygame.</description>
             <content type="html"><![CDATA[
@@ -667,10 +667,10 @@ MEANINGCOLOR <span style="color:#f92672">=</span> MCOLOR <span style="color:#f92
         
         <item>
             <title>Traceroute implementation using scapy</title>
-            <link>http://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</link>
+            <link>https://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</link>
             <pubDate>Wed, 28 Sep 2011 00:08:00 -0800</pubDate>
             
-            <guid>http://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</guid>
+            <guid>https://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</guid>
             <description>Traceroute Traceroute is a network diagnostic utility used for displaying the path taken by a packet to it&amp;rsquo;s destination. It uses the ICMP protocol to help traverse the path. Each IP packet has an 8 bit TTL field that gets decremented by every router on the path, to prevent the packet from indefinitely circulating the internet (or network). When the TTL value reaches zero an ICMP error &amp;lsquo;Time To Live Exceeded&amp;rsquo; is sent back to the sender.</description>
             <content type="html"><![CDATA[
 
@@ -741,10 +741,10 @@ Received 4 packets, got 1 answers, remaining 0 packets
         
         <item>
             <title>Dropbox: LAN Sync Protocol</title>
-            <link>http://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</link>
+            <link>https://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</link>
             <pubDate>Sat, 10 Sep 2011 00:08:00 -0800</pubDate>
             
-            <guid>http://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</guid>
+            <guid>https://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</guid>
             <description>A year ago, I fired up wire shark on my home network to check out the packet flow of the DHCP process. I closed all my browser windows and other chat/im services, and still noticed a lot of chatter on the network. One that got my particular attention was a packet that was related to the popular service dropbox. I had not updated/edited any files recently, so was surprised to see it.</description>
             <content type="html"><![CDATA[
 
@@ -802,10 +802,10 @@ MAGIC:
         
         <item>
             <title>How does DHCP work?</title>
-            <link>http://amehta.github.io/posts/2011/09/how-does-dhcp-work/</link>
+            <link>https://amehta.github.io/posts/2011/09/how-does-dhcp-work/</link>
             <pubDate>Sat, 10 Sep 2011 00:08:00 -0800</pubDate>
             
-            <guid>http://amehta.github.io/posts/2011/09/how-does-dhcp-work/</guid>
+            <guid>https://amehta.github.io/posts/2011/09/how-does-dhcp-work/</guid>
             <description>What is DHCP ? DHCP is a protocol used to provide an IP address to a device. It is also used to configure additional networking related parameters on the device like subnet mask, router, domain name, and dns server.
 Why DHCP ? DHCP stands for dynamic host configuration protocol and so allows a device to get an IP address without any manual intervention as long as the dhcp client is enabled and running on the device.</description>
             <content type="html"><![CDATA[

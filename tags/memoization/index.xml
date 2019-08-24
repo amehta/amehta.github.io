@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>memoization on Tech Log</title>
-    <link>http://amehta.github.io/tags/memoization/</link>
+    <link>https://amehta.github.io/tags/memoization/</link>
     <description>Recent content in memoization on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 07 Jan 2012 00:08:00 -0800</lastBuildDate>
     
-	<atom:link href="http://amehta.github.io/tags/memoization/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://amehta.github.io/tags/memoization/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>What is memoization?</title>
-      <link>http://amehta.github.io/posts/2012/01/what-is-memoization/</link>
+      <link>https://amehta.github.io/posts/2012/01/what-is-memoization/</link>
       <pubDate>Sat, 07 Jan 2012 00:08:00 -0800</pubDate>
       
-      <guid>http://amehta.github.io/posts/2012/01/what-is-memoization/</guid>
+      <guid>https://amehta.github.io/posts/2012/01/what-is-memoization/</guid>
       <description>Memoization is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.
 Now, lets try to walk this concept using a Fibonacci series where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&amp;rsquo;th term in the series.</description>
     </item>
