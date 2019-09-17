@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Apurva">
+<meta name="description"
+    content="In this blog post, I will show you how we can enhance our images using colored filters and add border backgrounds.
+   Original Original w/ color filter Original w/ color border           Let&amp;rsquo;s get started.
+1. Simple color filter Lets start with first creating a color filter - an image with just a single color. This is as simple as creating a 3-D array and filling each pixel with the same value." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://amehta.github.io/posts/2019/09/create-and-apply-simple-filters-to-an-image-using-opencv-and-python/" />
+
+
+<title>
+    
+    Create and apply simple filters to an image using OpenCV and Python :: Tech Log  — Hello Friend NG Theme
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://amehta.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://amehta.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://amehta.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://amehta.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://amehta.github.io/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="https://amehta.github.io/favicon.ico">
+<meta name="theme-color" content="#252627"><meta itemprop="name" content="Create and apply simple filters to an image using OpenCV and Python">
+<meta itemprop="description" content="In this blog post, I will show you how we can enhance our images using colored filters and add border backgrounds.
+   Original Original w/ color filter Original w/ color border           Let&rsquo;s get started.
+1. Simple color filter Lets start with first creating a color filter - an image with just a single color. This is as simple as creating a 3-D array and filling each pixel with the same value.">
+
+
+<meta itemprop="datePublished" content="2019-09-16T13:55:46-05:00" />
+<meta itemprop="dateModified" content="2019-09-16T13:55:46-05:00" />
+<meta itemprop="wordCount" content="412">
+
+
+
+<meta itemprop="keywords" content="python,opencv," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://amehta.github.io"/>
+
+<meta name="twitter:title" content="Create and apply simple filters to an image using OpenCV and Python"/>
+<meta name="twitter:description" content="In this blog post, I will show you how we can enhance our images using colored filters and add border backgrounds.
+   Original Original w/ color filter Original w/ color border           Let&rsquo;s get started.
+1. Simple color filter Lets start with first creating a color filter - an image with just a single color. This is as simple as creating a 3-D array and filling each pixel with the same value."/>
+
+
+
+<meta property="article:section" content="programming" />
+
+<meta property="article:published_time" content="2019-09-16 13:55:46 -0500 CDT" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://amehta.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://amehta.github.io/about/">About</a></li><li><a href="https://amehta.github.io/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>2 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title"><a href="https://amehta.github.io/posts/2019/09/create-and-apply-simple-filters-to-an-image-using-opencv-and-python/">Create and apply simple filters to an image using OpenCV and Python</a></h1>
+
+            
+
+            <div class="post-content">
+                
+
+<p>In this blog post, I will show you how we can enhance our images using colored filters
+and add border backgrounds.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Original</th>
+<th align="center">Original w/ color filter</th>
+<th align="center">Original w/ color border</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><img src="https://amehta.github.io/img/blagaj_resized.jpg" alt="Blagaj" /></td>
+<td align="center"><img src="https://amehta.github.io/img/blagaj_red_filter.jpg" alt="Blagaj" /></td>
+<td align="center"><img src="https://amehta.github.io/img/blagaj_black_border.jpg" alt="Blagaj" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>Let&rsquo;s get started.</p>
+
+<h3 id="1-simple-color-filter">1. Simple color filter</h3>
+
+<p>Lets start with first creating a color filter - an image with just a single color. This is as simple
+as creating a 3-D array and filling each pixel with the same value. In the code below I create an
+array of the same size (682,512,3) as that of the target image and fill each pixel with the color
+red (0,0,255).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">red_img  <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>full((<span style="color:#ae81ff">682</span>,<span style="color:#ae81ff">512</span>,<span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">255</span>), np<span style="color:#f92672">.</span>uint8)</code></pre></div>
+<p>Next, we read the target image using <code>cv2.imread()</code> and add the color filter (created above) to the image. This can be done using the function <code>cv2.add()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">image <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;blagaj_resized.jpg&#39;</span>
+target_img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>imread(image)
+fused_img  <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>add(target_img,red_img)</code></pre></div>
+<p>The problem with the above approach is that it does a simple addition. Imagine looking at a picture through a red colored paper, and mostl likely you won&rsquo;t see anything. Instead we are trying to create a a colored glass and look at the picture through it. This transluceny can be achieved by using a different function <code>cv2.addWeighted()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fused_img  <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>addWeighted(target_img, <span style="color:#ae81ff">0.8</span>, red_img, <span style="color:#ae81ff">0.2</span>, <span style="color:#ae81ff">0</span>)</code></pre></div>
+<p>In the code above, we add the target image and the colored image in the ratio 8:2 to get the effect as seen above. Feel free to play with other weights and colors.</p>
+
+<h4 id="full-program-listing">Full program listing</h4>
+
+<p>Here is the full program listing</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> cv2
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+
+<span style="color:#75715e"># read the target file</span>
+image <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;blagaj_resized.jpg&#39;</span>
+target_img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>imread(image)
+
+<span style="color:#75715e"># create an image with a single color (here: red)</span>
+red_img  <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>full((<span style="color:#ae81ff">682</span>,<span style="color:#ae81ff">512</span>,<span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">255</span>), np<span style="color:#f92672">.</span>uint8)
+
+<span style="color:#75715e"># add the filter  with a weight factor of 20% to the target image</span>
+fused_img  <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>addWeighted(target_img, <span style="color:#ae81ff">0.8</span>, red_img, <span style="color:#ae81ff">0.2</span>, <span style="color:#ae81ff">0</span>)
+
+cv2<span style="color:#f92672">.</span>imshow(<span style="color:#e6db74">&#34;Red Filter&#34;</span>, fused_img)
+cv2<span style="color:#f92672">.</span>waitKey(<span style="color:#ae81ff">0</span>)
+
+cv2<span style="color:#f92672">.</span>imwrite(<span style="color:#e6db74">&#39;blagaj_red_filter.jpg&#39;</span>, fused_img)</code></pre></div>
+<h3 id="2-simple-color-border">2. Simple color border</h3>
+
+<p>This is an even simpler task than the one we just performed. All we need to do is pass the color and the dimensions of the needed border to the target image using <code>v2.copyMakeBorder()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BLACK <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]
+black_border_img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>copyMakeBorder(target_img, <span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>, cv2<span style="color:#f92672">.</span>BORDER_CONSTANT, value<span style="color:#f92672">=</span>BLACK)</code></pre></div>
+<h4 id="full-program-listing-1">Full program listing</h4>
+
+<p>Here is the full program listing</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> cv2
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+
+<span style="color:#75715e"># read the target file</span>
+image <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;blagaj_resized.jpg&#39;</span>
+target_img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>imread(image)
+
+<span style="color:#75715e"># create a border of a specfic color (here: black) and apply to image</span>
+BLACK <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]
+black_border_img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>copyMakeBorder(target_img, <span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>, cv2<span style="color:#f92672">.</span>BORDER_CONSTANT, value<span style="color:#f92672">=</span>BLACK)
+
+cv2<span style="color:#f92672">.</span>imshow(<span style="color:#e6db74">&#34;BORDER_CONSTANT&#34;</span>, black_border_img)
+cv2<span style="color:#f92672">.</span>waitKey(<span style="color:#ae81ff">0</span>)
+
+cv2<span style="color:#f92672">.</span>imwrite(<span style="color:#e6db74">&#39;blagaj_red_filter.jpg&#39;</span>, black_border_img)</code></pre></div>
+<p>Stay tuned for more posts on OpenCV.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://amehta.github.io/tags/python">python</a></span><span class="tag"><a href="https://amehta.github.io/tags/opencv">opencv</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>412 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-09-16 13:55 -0500</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/">
+                                <span class="button__text">Adding text to an image using OpenCV and Python</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+                <span><a href="https://amehta.github.io">Apurva Mehta</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://amehta.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://amehta.github.io/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-144111621-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>

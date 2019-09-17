@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>networking on Tech Log</title>
+    <link>https://amehta.github.io/categories/networking/</link>
+    <description>Recent content in networking on Tech Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 28 Sep 2011 00:08:00 -0800</lastBuildDate>
+    
+	<atom:link href="https://amehta.github.io/categories/networking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Traceroute implementation using scapy</title>
+      <link>https://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</link>
+      <pubDate>Wed, 28 Sep 2011 00:08:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</guid>
+      <description>Traceroute Traceroute is a network diagnostic utility used for displaying the path taken by a packet to it&amp;rsquo;s destination. It uses the ICMP protocol to help traverse the path. Each IP packet has an 8 bit TTL field that gets decremented by every router on the path, to prevent the packet from indefinitely circulating the internet (or network). When the TTL value reaches zero an ICMP error &amp;lsquo;Time To Live Exceeded&amp;rsquo; is sent back to the sender.</description>
+    </item>
+    
+    <item>
+      <title>Dropbox: LAN Sync Protocol</title>
+      <link>https://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</link>
+      <pubDate>Sat, 10 Sep 2011 00:08:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2011/09/dropbox-lan-sync-protocol/</guid>
+      <description>A year ago, I fired up wire shark on my home network to check out the packet flow of the DHCP process. I closed all my browser windows and other chat/im services, and still noticed a lot of chatter on the network. One that got my particular attention was a packet that was related to the popular service dropbox. I had not updated/edited any files recently, so was surprised to see it.</description>
+    </item>
+    
+    <item>
+      <title>How does DHCP work?</title>
+      <link>https://amehta.github.io/posts/2011/09/how-does-dhcp-work/</link>
+      <pubDate>Sat, 10 Sep 2011 00:08:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2011/09/how-does-dhcp-work/</guid>
+      <description>What is DHCP ? DHCP is a protocol used to provide an IP address to a device. It is also used to configure additional networking related parameters on the device like subnet mask, router, domain name, and dns server.
+Why DHCP ? DHCP stands for dynamic host configuration protocol and so allows a device to get an IP address without any manual intervention as long as the dhcp client is enabled and running on the device.</description>
+    </item>
+    
+  </channel>
+</rss>

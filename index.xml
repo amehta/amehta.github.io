@@ -2,13 +2,116 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech Log</title>
-    <link>https://amehta.github.io/index.html</link>
+    <link>https://amehta.github.io/</link>
     <description>Recent content on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 16 Sep 2019 13:55:46 -0500</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Create and apply simple filters to an image using OpenCV and Python</title>
+      <link>https://amehta.github.io/posts/2019/09/create-and-apply-simple-filters-to-an-image-using-opencv-and-python/</link>
+      <pubDate>Mon, 16 Sep 2019 13:55:46 -0500</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2019/09/create-and-apply-simple-filters-to-an-image-using-opencv-and-python/</guid>
+      <description>In this blog post, I will show you how we can enhance our images using colored filters and add border backgrounds.
+   Original Original w/ color filter Original w/ color border           Let&amp;rsquo;s get started.
+1. Simple color filter Lets start with first creating a color filter - an image with just a single color. This is as simple as creating a 3-D array and filling each pixel with the same value.</description>
+    </item>
+    
+    <item>
+      <title>Adding text to an image using OpenCV and Python</title>
+      <link>https://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</link>
+      <pubDate>Thu, 22 Aug 2019 23:08:06 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</guid>
+      <description>In a series of upcoming blog posts, I will be using OpenCV to manipulate images. In this post, I will be adding text to an image (below), I took of a Dervish monastery at the beautiful village of Blagaj in Bosnia.
+   Resized Original Resized Original w/ text          Lets get started.
+ Read Image Resize Image by aspect ratio Add text to resized image Save resized image with text  1.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://amehta.github.io/about/</link>
+      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://amehta.github.io/about/</guid>
+      <description>I’m just another earthling who likes traveling, programming, learning, writing, and making stuff.
+That’s all that I can think of right now. Hopefully I’ll add something more to this later on. 😅
+Curious about me? Use the social links above to check out my profiles.
+This blog is powered by Hugo, the world’s fastest framework for building websites. It is written in Go.</description>
+    </item>
+    
+    <item>
+      <title>WC implementation in Go Lang</title>
+      <link>https://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</link>
+      <pubDate>Mon, 11 Mar 2019 00:21:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</guid>
+      <description>Continuing the theme of exploring Go Lang, today I will be writing a simple version of the Unix utility wc that displays the number of lines, words, and bytes contained in each input file.
+This exploration process will involve the following pieces * Getting a file name from command line. os * Opening the file for reading. os * Reading the contents of the file. bufio * Count the lines, words and bytes.</description>
+    </item>
+    
+    <item>
+      <title>Exploring filesystem in golang</title>
+      <link>https://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</link>
+      <pubDate>Wed, 06 Mar 2019 00:12:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</guid>
+      <description>I am currently dabbling in GoLang and trying to get familiar with it&amp;rsquo;s syntax and style of programming. I also want to get familiar with the built-in packages for basic tasks witout having to google for basic features.
+In this post I will be working my way up to building a simple program that can list the files of a given path to it as a command line argument.</description>
+    </item>
+    
+    <item>
+      <title>ls implementation in python3</title>
+      <link>https://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</link>
+      <pubDate>Thu, 28 Feb 2019 00:08:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</guid>
+      <description>&amp;ldquo;ls&amp;rdquo; is unix utility that lists the files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the ls command line utility.
+Some basic information First, we execute ls command line utility to get some preliminary information of a directory. Here is an example of the output from the ls command on a sample directory.</description>
+    </item>
+    
+    <item>
+      <title>Using Python&#39;s map() AND reduce()</title>
+      <link>https://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</link>
+      <pubDate>Sun, 29 Jan 2012 00:08:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</guid>
+      <description>Sum of the Squares of the first 5 numbers In this post I will try to use the map() and reduce() functions to compute the sum of the squares of the first five numbers. The map() function takes a function and an iterable as a parameter. The items of the iterable are fed to the function to create a new list. The reduce() function also takes a function and an iterable as a parameter.</description>
+    </item>
+    
+    <item>
+      <title>What is memoization?</title>
+      <link>https://amehta.github.io/posts/2012/01/what-is-memoization/</link>
+      <pubDate>Sat, 07 Jan 2012 00:08:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2012/01/what-is-memoization/</guid>
+      <description>Memoization is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.
+Now, lets try to walk this concept using a Fibonacci series where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&amp;rsquo;th term in the series.</description>
+    </item>
+    
+    <item>
+      <title>Flash cards using pygame</title>
+      <link>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</link>
+      <pubDate>Sun, 06 Nov 2011 00:08:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</guid>
+      <description>Flash Cards I am currently enrolled in a spanish class for beginners at the local community college. So, the other day one of the classmates who sits next to me asked if I was using flash cards to memorize the words. I mentioned that since I am pretty much in front of a computer all day, I will write a simple program to simulate a flash card.
+Today, I embarked upon writing the very first version of my flash card application using pygame.</description>
+    </item>
+    
+    <item>
+      <title>Traceroute implementation using scapy</title>
+      <link>https://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</link>
+      <pubDate>Wed, 28 Sep 2011 00:08:00 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2011/09/traceroute-implementation-using-scapy/</guid>
+      <description>Traceroute Traceroute is a network diagnostic utility used for displaying the path taken by a packet to it&amp;rsquo;s destination. It uses the ICMP protocol to help traverse the path. Each IP packet has an 8 bit TTL field that gets decremented by every router on the path, to prevent the packet from indefinitely circulating the internet (or network). When the TTL value reaches zero an ICMP error &amp;lsquo;Time To Live Exceeded&amp;rsquo; is sent back to the sender.</description>
+    </item>
     
   </channel>
 </rss>
