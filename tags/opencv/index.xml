@@ -6,10 +6,21 @@
     <description>Recent content in opencv on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 16 Sep 2019 13:55:46 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 25 Sep 2019 13:53:05 -0500</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Select Sections From Images of Newspaper clippings, receipts etc Using Opencv and Python</title>
+      <link>https://amehta.github.io/posts/2019/09/select-sections-from-images-of-newspaper-clippings-receipts-etc-using-opencv-and-python/</link>
+      <pubDate>Wed, 25 Sep 2019 13:53:05 -0500</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2019/09/select-sections-from-images-of-newspaper-clippings-receipts-etc-using-opencv-and-python/</guid>
+      <description>We often take pictures of menus, receipts, and message boards etc. They are often not aligned properly. In this post, I will show you how to select the pertinet parts and allign them as correctly as possible.
+   Original Processed          Let&amp;rsquo;s get started.
+1. Find the anchor points We will first load the image of a newspaper clipping containing the sudoku puzzle.</description>
+    </item>
     
     <item>
       <title>Create and apply simple filters to an image using OpenCV and Python</title>
