@@ -6,10 +6,21 @@
     <description>Recent content on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 25 Sep 2019 13:53:05 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 27 Feb 2020 10:01:08 -0800</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://amehta.github.io/privacy/</link>
+      <pubDate>Thu, 27 Feb 2020 10:01:08 -0800</pubDate>
+      
+      <guid>https://amehta.github.io/privacy/</guid>
+      <description>Privacy Policy Apurva Mehta built the Space Jam app as an Ad Supported app. This SERVICE is provided by at no cost and is intended for use as is.
+This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+If you choose to use my Service, then you agree to the collection and use of information in relation to this policy.</description>
+    </item>
     
     <item>
       <title>Select Sections From Images of Newspaper clippings, receipts etc Using Opencv and Python</title>
@@ -103,16 +114,6 @@ Some basic information First, we execute ls command line utility to get some pre
       <guid>https://amehta.github.io/posts/2012/01/what-is-memoization/</guid>
       <description>Memoization is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.
 Now, lets try to walk this concept using a Fibonacci series where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&amp;rsquo;th term in the series.</description>
-    </item>
-    
-    <item>
-      <title>Flash cards using pygame</title>
-      <link>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</link>
-      <pubDate>Sun, 06 Nov 2011 00:08:00 -0800</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</guid>
-      <description>Flash Cards I am currently enrolled in a spanish class for beginners at the local community college. So, the other day one of the classmates who sits next to me asked if I was using flash cards to memorize the words. I mentioned that since I am pretty much in front of a computer all day, I will write a simple program to simulate a flash card.
-Today, I embarked upon writing the very first version of my flash card application using pygame.</description>
     </item>
     
   </channel>
