@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on Tech Log</title>
+    <link>https://amehta.github.io/categories/web/</link>
+    <description>Recent content in web on Tech Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 13 Aug 2019 23:14:17 -0700</lastBuildDate>
+    
+	<atom:link href="https://amehta.github.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gunicorn</title>
+      <link>https://amehta.github.io/posts/2019/08/gunicorn/</link>
+      <pubDate>Tue, 13 Aug 2019 23:14:17 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/posts/2019/08/gunicorn/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,22 @@
     <description>Recent content on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 27 Feb 2020 10:01:08 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 09:00:05 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to enumerate nodes in Spritekit?</title>
+      <link>https://amehta.github.io/tips/enumerate_spritekit_nodes/</link>
+      <pubDate>Fri, 10 Apr 2020 09:00:05 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/enumerate_spritekit_nodes/</guid>
+      <description>Last Run on XCODE 11.4 / Swift 5.2
+Spritekit has a method enumerateChildNodes that searches the children of the receiving node to perform processing for nodes that share a name.
+In the code snippet below, we are are iterating through all the nodes with the name &amp;ldquo;trafficCar&amp;rdquo; in the parent node (or SKScene) and performing some action on it.
+func moveTraffic() { enumerateChildNodes(withName: &amp;#34;trafficCar&amp;#34;) { (trafficCar, stop) in let car = trafficCar as!</description>
+    </item>
     
     <item>
       <title></title>
@@ -104,16 +116,6 @@ Some basic information First, we execute ls command line utility to get some pre
       
       <guid>https://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</guid>
       <description>Sum of the Squares of the first 5 numbers In this post I will try to use the map() and reduce() functions to compute the sum of the squares of the first five numbers. The map() function takes a function and an iterable as a parameter. The items of the iterable are fed to the function to create a new list. The reduce() function also takes a function and an iterable as a parameter.</description>
-    </item>
-    
-    <item>
-      <title>What is memoization?</title>
-      <link>https://amehta.github.io/posts/2012/01/what-is-memoization/</link>
-      <pubDate>Sat, 07 Jan 2012 00:08:00 -0800</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2012/01/what-is-memoization/</guid>
-      <description>Memoization is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.
-Now, lets try to walk this concept using a Fibonacci series where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&amp;rsquo;th term in the series.</description>
     </item>
     
   </channel>

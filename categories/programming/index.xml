@@ -6,10 +6,22 @@
     <description>Recent content in programming on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 25 Sep 2019 13:53:05 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 09:00:05 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to enumerate nodes in Spritekit?</title>
+      <link>https://amehta.github.io/tips/enumerate_spritekit_nodes/</link>
+      <pubDate>Fri, 10 Apr 2020 09:00:05 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/enumerate_spritekit_nodes/</guid>
+      <description>Last Run on XCODE 11.4 / Swift 5.2
+Spritekit has a method enumerateChildNodes that searches the children of the receiving node to perform processing for nodes that share a name.
+In the code snippet below, we are are iterating through all the nodes with the name &amp;ldquo;trafficCar&amp;rdquo; in the parent node (or SKScene) and performing some action on it.
+func moveTraffic() { enumerateChildNodes(withName: &amp;#34;trafficCar&amp;#34;) { (trafficCar, stop) in let car = trafficCar as!</description>
+    </item>
     
     <item>
       <title>Select Sections From Images of Newspaper clippings, receipts etc Using Opencv and Python</title>
