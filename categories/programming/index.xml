@@ -6,10 +6,22 @@
     <description>Recent content in programming on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 10 Apr 2020 09:00:05 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2020 22:23:31 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Access Swift String by Index</title>
+      <link>https://amehta.github.io/tips/access-swift-string-by-index/</link>
+      <pubDate>Tue, 21 Apr 2020 22:23:31 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/access-swift-string-by-index/</guid>
+      <description>Last Run on XCODE 11.4 / Swift 5.2
+The swift string class does not provide the ability to get a character at a specific index because of its native support for UTF characters.
+In the code snippets below, we will walk through code to access elements of a string at speific positions.
+Getting the first Character let mySwiftString = &amp;#34;Swift is awesome!&amp;#34; //Getting the first Character mySwiftString.first let firstIndex = mySwiftString.</description>
+    </item>
     
     <item>
       <title>How to enumerate nodes in Spritekit?</title>
@@ -103,16 +115,6 @@ Some basic information First, we execute ls command line utility to get some pre
       <guid>https://amehta.github.io/posts/2012/01/what-is-memoization/</guid>
       <description>Memoization is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.
 Now, lets try to walk this concept using a Fibonacci series where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&amp;rsquo;th term in the series.</description>
-    </item>
-    
-    <item>
-      <title>Flash cards using pygame</title>
-      <link>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</link>
-      <pubDate>Sun, 06 Nov 2011 00:08:00 -0800</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2011/11/flash-cards-using-pygame/</guid>
-      <description>Flash Cards I am currently enrolled in a spanish class for beginners at the local community college. So, the other day one of the classmates who sits next to me asked if I was using flash cards to memorize the words. I mentioned that since I am pretty much in front of a computer all day, I will write a simple program to simulate a flash card.
-Today, I embarked upon writing the very first version of my flash card application using pygame.</description>
     </item>
     
   </channel>

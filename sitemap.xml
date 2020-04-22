@@ -3,8 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://amehta.github.io/tips/access-swift-string-by-index/</loc>
+    <lastmod>2020-04-21T22:23:31-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://amehta.github.io/categories/</loc>
-    <lastmod>2020-04-10T09:00:05-07:00</lastmod>
+    <lastmod>2020-04-21T22:23:31-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/</loc>
+    <lastmod>2020-04-21T22:23:31-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/</loc>
+    <lastmod>2020-04-21T22:23:31-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tips/</loc>
+    <lastmod>2020-04-21T22:23:31-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/categories/programming/</loc>
+    <lastmod>2020-04-21T22:23:31-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/string/</loc>
+    <lastmod>2020-04-21T22:23:31-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/swift/</loc>
+    <lastmod>2020-04-21T22:23:31-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/swift5.2/</loc>
+    <lastmod>2020-04-21T22:23:31-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -14,43 +61,7 @@
   </url>
   
   <url>
-    <loc>https://amehta.github.io/tags/</loc>
-    <lastmod>2020-04-10T09:00:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/</loc>
-    <lastmod>2020-04-10T09:00:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/tips/</loc>
-    <lastmod>2020-04-10T09:00:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/categories/programming/</loc>
-    <lastmod>2020-04-10T09:00:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://amehta.github.io/tags/spritekit/</loc>
-    <lastmod>2020-04-10T09:00:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/tags/swift/</loc>
-    <lastmod>2020-04-10T09:00:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/tags/swift5.2/</loc>
     <lastmod>2020-04-10T09:00:05-07:00</lastmod>
     <priority>0</priority>
   </url>
