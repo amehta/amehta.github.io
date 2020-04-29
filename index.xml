@@ -6,10 +6,22 @@
     <description>Recent content on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 21 Apr 2020 22:23:31 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 21:56:43 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Matching Swift Strings by Prefix or Suffix</title>
+      <link>https://amehta.github.io/tips/matching-swift-strings-by-prefix-or-suffix/</link>
+      <pubDate>Tue, 28 Apr 2020 21:56:43 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/matching-swift-strings-by-prefix-or-suffix/</guid>
+      <description>Last Run on XCODE 11.4 / Swift 5.2
+A simple way to check if a string starts or ends with a certain pattern is to use the method hasSuffix and hasPrefix available to Strings.
+In the code snippet below, we will check if a string beginds or ends with a specific text pattern.
+let fileName1 = &amp;#34;InstagramCover.jpg&amp;#34; let fileName2 = &amp;#34;SnapchatCover.doc&amp;#34; fileName1.hasSuffix(&amp;#34;jpg&amp;#34;) // result --&amp;gt; True fileName2.hasSuffix(&amp;#34;jpg&amp;#34;) // result --&amp;gt; False fileName1.</description>
+    </item>
     
     <item>
       <title>Access Swift String by Index</title>
@@ -109,16 +121,6 @@ This exploration process will involve the following pieces * Getting a file name
       <guid>https://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</guid>
       <description>I am currently dabbling in GoLang and trying to get familiar with it&amp;rsquo;s syntax and style of programming. I also want to get familiar with the built-in packages for basic tasks witout having to google for basic features.
 In this post I will be working my way up to building a simple program that can list the files of a given path to it as a command line argument.</description>
-    </item>
-    
-    <item>
-      <title>ls implementation in python3</title>
-      <link>https://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</link>
-      <pubDate>Thu, 28 Feb 2019 00:08:00 -0800</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</guid>
-      <description>&amp;ldquo;ls&amp;rdquo; is unix utility that lists the files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the ls command line utility.
-Some basic information First, we execute ls command line utility to get some preliminary information of a directory. Here is an example of the output from the ls command on a sample directory.</description>
     </item>
     
   </channel>

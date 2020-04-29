@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Apurva">
+<meta name="description"
+    content="Last Run on XCODE 11.4 / Swift 5.2
+A simple way to check if a string starts or ends with a certain pattern is to use the method hasSuffix and hasPrefix available to Strings.
+In the code snippet below, we will check if a string beginds or ends with a specific text pattern.
+let fileName1 = &amp;#34;InstagramCover.jpg&amp;#34; let fileName2 = &amp;#34;SnapchatCover.doc&amp;#34; fileName1.hasSuffix(&amp;#34;jpg&amp;#34;) // result --&amp;gt; True fileName2.hasSuffix(&amp;#34;jpg&amp;#34;) // result --&amp;gt; False fileName1." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://amehta.github.io/tips/matching-swift-strings-by-prefix-or-suffix/" />
+
+
+<title>
+    
+    Matching Swift Strings by Prefix or Suffix :: Tech Log  — Hello Friend NG Theme
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://amehta.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://amehta.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://amehta.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://amehta.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://amehta.github.io/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="https://amehta.github.io/favicon.ico">
+<meta name="theme-color" content="#252627"><meta itemprop="name" content="Matching Swift Strings by Prefix or Suffix">
+<meta itemprop="description" content="Last Run on XCODE 11.4 / Swift 5.2
+A simple way to check if a string starts or ends with a certain pattern is to use the method hasSuffix and hasPrefix available to Strings.
+In the code snippet below, we will check if a string beginds or ends with a specific text pattern.
+let fileName1 = &#34;InstagramCover.jpg&#34; let fileName2 = &#34;SnapchatCover.doc&#34; fileName1.hasSuffix(&#34;jpg&#34;) // result --&gt; True fileName2.hasSuffix(&#34;jpg&#34;) // result --&gt; False fileName1.">
+
+
+<meta itemprop="datePublished" content="2020-04-28T21:56:43-07:00" />
+<meta itemprop="dateModified" content="2020-04-28T21:56:43-07:00" />
+<meta itemprop="wordCount" content="154">
+
+
+
+<meta itemprop="keywords" content="swift,string,swift5.2," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://amehta.github.io"/>
+
+<meta name="twitter:title" content="Matching Swift Strings by Prefix or Suffix"/>
+<meta name="twitter:description" content="Last Run on XCODE 11.4 / Swift 5.2
+A simple way to check if a string starts or ends with a certain pattern is to use the method hasSuffix and hasPrefix available to Strings.
+In the code snippet below, we will check if a string beginds or ends with a specific text pattern.
+let fileName1 = &#34;InstagramCover.jpg&#34; let fileName2 = &#34;SnapchatCover.doc&#34; fileName1.hasSuffix(&#34;jpg&#34;) // result --&gt; True fileName2.hasSuffix(&#34;jpg&#34;) // result --&gt; False fileName1."/>
+
+
+
+<meta property="article:section" content="programming" />
+
+<meta property="article:published_time" content="2020-04-28 21:56:43 -0700 PDT" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://amehta.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://amehta.github.io/about/">About</a></li><li><a href="https://amehta.github.io/posts/">Posts</a></li><li><a href="https://amehta.github.io/tips/">Tips</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://amehta.github.io/tips/matching-swift-strings-by-prefix-or-suffix/">Matching Swift Strings by Prefix or Suffix</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>Last Run on XCODE 11.4 / Swift 5.2</p>
+
+<p>A simple way to check if a string starts or ends with a certain pattern is to use the method <code>hasSuffix</code> and <code>hasPrefix</code> available to Strings.</p>
+
+<p>In the code snippet below, we will check if a string beginds or ends with a specific text pattern.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> fileName1 = <span style="color:#e6db74">&#34;InstagramCover.jpg&#34;</span>
+<span style="color:#66d9ef">let</span> fileName2 = <span style="color:#e6db74">&#34;SnapchatCover.doc&#34;</span>
+
+fileName1.hasSuffix(<span style="color:#e6db74">&#34;jpg&#34;</span>) <span style="color:#75715e">// result --&gt; True</span>
+fileName2.hasSuffix(<span style="color:#e6db74">&#34;jpg&#34;</span>) <span style="color:#75715e">// result --&gt; False</span>
+
+fileName1.hasPrefix(<span style="color:#e6db74">&#34;Instagram&#34;</span>) <span style="color:#75715e">// --&gt; True</span>
+fileName2.hasPrefix(<span style="color:#e6db74">&#34;Facebook&#34;</span>) <span style="color:#75715e">// result --&gt; False</span></code></pre></div>
+<p>If we need to check against multiple variations, we can&rsquo;t just use <code>hasSuffix</code>. Instead, we will have
+to use it along with another method <code>contains</code>. Checkout the code snippet below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> fileName1 = <span style="color:#e6db74">&#34;InstagramCover.png&#34;</span>
+<span style="color:#66d9ef">let</span> fileName2 = <span style="color:#e6db74">&#34;SnapchatCover.doc&#34;</span>
+
+<span style="color:#66d9ef">let</span> fileExtensions = [<span style="color:#e6db74">&#34;jpg&#34;</span>, <span style="color:#e6db74">&#34;jpeg&#34;</span>, <span style="color:#e6db74">&#34;png&#34;</span>]
+<span style="color:#66d9ef">let</span> socialMediaNameFilePrefixes = [<span style="color:#e6db74">&#34;Instagram&#34;</span>, <span style="color:#e6db74">&#34;Facebook&#34;</span>, <span style="color:#e6db74">&#34;Twitter&#34;</span>]
+
+fileExtensions.contains(<span style="color:#66d9ef">where</span>: fileName1.hasSuffix) <span style="color:#75715e">// result --&gt; True</span>
+fileExtensions.contains(<span style="color:#66d9ef">where</span>: fileName2.hasSuffix) <span style="color:#75715e">// result --&gt; False</span>
+
+socialMediaNameFilePrefixes.contains(<span style="color:#66d9ef">where</span>: fileName1.hasPrefix) <span style="color:#75715e">// result --&gt; True</span>
+socialMediaNameFilePrefixes.contains(<span style="color:#66d9ef">where</span>: fileName2.hasPrefix) <span style="color:#75715e">// result --&gt; False</span></code></pre></div>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://amehta.github.io/tags/swift">swift</a></span><span class="tag"><a href="https://amehta.github.io/tags/string">string</a></span><span class="tag"><a href="https://amehta.github.io/tags/swift5.2">swift5.2</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://amehta.github.io">Apurva Mehta</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://amehta.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://amehta.github.io/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-144111621-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>
