@@ -6,10 +6,22 @@
     <description>Recent content in swift on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 28 Apr 2020 21:56:43 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 12:11:26 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Checking if a Swift String contains a certain text</title>
+      <link>https://amehta.github.io/tips/checking-if-swift-strings-contains-text/</link>
+      <pubDate>Fri, 01 May 2020 12:11:26 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/checking-if-swift-strings-contains-text/</guid>
+      <description>Last Run on XCODE 11.4 / Swift 5.2
+A simple way to check if a string contains a certain text is to use the method contains available to Strings.
+In the code snippet below, we will check if a string contains a certain text.
+let fruit1 = &amp;#34;apple&amp;#34; let fruit2 = &amp;#34;banana&amp;#34; let mySentence = &amp;#34;An apple a day keeps the doctor away.&amp;#34; mySentence.contains(fruit1) // result --&amp;gt; True mySentence.contains(fruit2) // result --&amp;gt; False If we need to check the string against multiple options, we will have to use a variation of the contains method that takes a closure.</description>
+    </item>
     
     <item>
       <title>Matching Swift Strings by Prefix or Suffix</title>
@@ -19,7 +31,7 @@
       <guid>https://amehta.github.io/tips/matching-swift-strings-by-prefix-or-suffix/</guid>
       <description>Last Run on XCODE 11.4 / Swift 5.2
 A simple way to check if a string starts or ends with a certain pattern is to use the method hasSuffix and hasPrefix available to Strings.
-In the code snippet below, we will check if a string beginds or ends with a specific text pattern.
+In the code snippet below, we will check if a string begins or ends with a specific text pattern.
 let fileName1 = &amp;#34;InstagramCover.jpg&amp;#34; let fileName2 = &amp;#34;SnapchatCover.doc&amp;#34; fileName1.hasSuffix(&amp;#34;jpg&amp;#34;) // result --&amp;gt; True fileName2.hasSuffix(&amp;#34;jpg&amp;#34;) // result --&amp;gt; False fileName1.</description>
     </item>
     

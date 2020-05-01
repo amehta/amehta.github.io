@@ -6,10 +6,22 @@
     <description>Recent content in programming on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 28 Apr 2020 21:56:43 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 12:11:26 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Checking if a Swift String contains a certain text</title>
+      <link>https://amehta.github.io/tips/checking-if-swift-strings-contains-text/</link>
+      <pubDate>Fri, 01 May 2020 12:11:26 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/checking-if-swift-strings-contains-text/</guid>
+      <description>Last Run on XCODE 11.4 / Swift 5.2
+A simple way to check if a string contains a certain text is to use the method contains available to Strings.
+In the code snippet below, we will check if a string contains a certain text.
+let fruit1 = &amp;#34;apple&amp;#34; let fruit2 = &amp;#34;banana&amp;#34; let mySentence = &amp;#34;An apple a day keeps the doctor away.&amp;#34; mySentence.contains(fruit1) // result --&amp;gt; True mySentence.contains(fruit2) // result --&amp;gt; False If we need to check the string against multiple options, we will have to use a variation of the contains method that takes a closure.</description>
+    </item>
     
     <item>
       <title>Matching Swift Strings by Prefix or Suffix</title>
@@ -19,7 +31,7 @@
       <guid>https://amehta.github.io/tips/matching-swift-strings-by-prefix-or-suffix/</guid>
       <description>Last Run on XCODE 11.4 / Swift 5.2
 A simple way to check if a string starts or ends with a certain pattern is to use the method hasSuffix and hasPrefix available to Strings.
-In the code snippet below, we will check if a string beginds or ends with a specific text pattern.
+In the code snippet below, we will check if a string begins or ends with a specific text pattern.
 let fileName1 = &amp;#34;InstagramCover.jpg&amp;#34; let fileName2 = &amp;#34;SnapchatCover.doc&amp;#34; fileName1.hasSuffix(&amp;#34;jpg&amp;#34;) // result --&amp;gt; True fileName2.hasSuffix(&amp;#34;jpg&amp;#34;) // result --&amp;gt; False fileName1.</description>
     </item>
     
@@ -108,15 +120,6 @@ In this post I will be working my way up to building a simple program that can l
       <guid>https://amehta.github.io/posts/2019/02/ls-implementation-in-python3/</guid>
       <description>&amp;ldquo;ls&amp;rdquo; is unix utility that lists the files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the ls command line utility.
 Some basic information First, we execute ls command line utility to get some preliminary information of a directory. Here is an example of the output from the ls command on a sample directory.</description>
-    </item>
-    
-    <item>
-      <title>Using Python&#39;s map() AND reduce()</title>
-      <link>https://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</link>
-      <pubDate>Sun, 29 Jan 2012 00:08:00 -0800</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2012/01/using-pythons-map-and-reduce/</guid>
-      <description>Sum of the Squares of the first 5 numbers In this post I will try to use the map() and reduce() functions to compute the sum of the squares of the first five numbers. The map() function takes a function and an iterable as a parameter. The items of the iterable are fed to the function to create a new list. The reduce() function also takes a function and an iterable as a parameter.</description>
     </item>
     
   </channel>
