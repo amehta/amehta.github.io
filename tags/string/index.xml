@@ -6,10 +6,22 @@
     <description>Recent content in string on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 01 May 2020 12:11:26 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2020 22:18:51 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/tags/string/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>User Input in Swift commandline</title>
+      <link>https://amehta.github.io/tips/user-input-in-swift-commandline/</link>
+      <pubDate>Sun, 03 May 2020 22:18:51 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/user-input-in-swift-commandline/</guid>
+      <description>Last Run on XCODE 11.4 / Swift 5.2
+If you are writing a command line tool and need user input, the readLine() function can be used for it. It returns an optional
+let input = readLine() And, if you dont want the ending new line character, you can set the strippingNewline parameter to true.
+let input = readLine(strippingNewline: true)</description>
+    </item>
     
     <item>
       <title>Checking if a Swift String contains a certain text</title>
