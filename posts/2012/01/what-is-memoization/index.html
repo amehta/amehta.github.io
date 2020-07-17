@@ -27,7 +27,7 @@ Now, lets try to walk this concept using a Fibonacci series where each number in
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -40,16 +40,14 @@ Now, lets try to walk this concept using a Fibonacci series where each number in
 <meta name="theme-color" content="#252627"><meta itemprop="name" content="What is memoization?">
 <meta itemprop="description" content="Memoization is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.
 Now, lets try to walk this concept using a Fibonacci series where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&rsquo;th term in the series.">
-
-
 <meta itemprop="datePublished" content="2012-01-07T00:08:00-08:00" />
 <meta itemprop="dateModified" content="2012-01-07T00:08:00-08:00" />
 <meta itemprop="wordCount" content="383">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="python,dynamic-programming,memoization," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="python,dynamic-programming,memoization," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="What is memoization?"/>
@@ -129,27 +127,26 @@ Now, lets try to walk this concept using a Fibonacci series where each number in
             
 
             <div class="post-content">
-                <p><a href="https://en.wikipedia.org/wiki/Memoization" target="_blank"><code>Memoization</code></a> is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.</p>
-
-<p>Now, lets try to walk this concept using a <a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank"><code>Fibonacci series</code></a> where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&rsquo;th term in the series.</p>
-
+                <p><a href="https://en.wikipedia.org/wiki/Memoization"><code>Memoization</code></a> is a computer science concept to optimize programs by avoiding computations that have already been done and to reuse it. This is achieved by storing the computaions in a lookup table and retrieving them if a need for it arrives in a future computation step.</p>
+<p>Now, lets try to walk this concept using a <a href="https://en.wikipedia.org/wiki/Fibonacci_number"><code>Fibonacci series</code></a> where each number in the series is sum of the previous two numbers. In the subsequent code, we are trying to find the value of the N&rsquo;th term in the series.</p>
 <p><code>Fibonacci Series -&gt; 0, 1, 1, 2, 3, 5, 8, ....</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fib</span>(n):
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fib</span>(n):
     <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
         <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span> 
     <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
         <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
     <span style="color:#66d9ef">return</span> fib(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>fib(n<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)    
 
-{<span style="color:#f92672">%</span> endhighlight <span style="color:#f92672">%</span>}</code></pre></div>
-<p>So,
-F(7) = F(6) + F(5)
-       = [F(5) + F(4)] + [F(4) + F(3)]
-       = [[F(4) + F(3)] + [F(3) + F(2)]] + [[F(3)+ F(2)] + [F(2)+F(1)]]<br />
-       = [[[F(3)+F(2)] + [F(2)+F(1)]] + [[F(2)+F(1)] + [F(1)+F(0)]]] + [[F(3)+ F(2)] + [F(2)+F(1)]]
-       = &hellip;
-       = 8</p>
+{<span style="color:#f92672">%</span> endhighlight <span style="color:#f92672">%</span>}
 
+</code></pre></div><p>So,
+F(7) = F(6) + F(5)
+= [F(5) + F(4)] + [F(4) + F(3)]
+= [[F(4) + F(3)] + [F(3) + F(2)]] + [[F(3)+ F(2)] + [F(2)+F(1)]]<br>
+= [[[F(3)+F(2)] + [F(2)+F(1)]] + [[F(2)+F(1)] + [F(1)+F(0)]]] + [[F(3)+ F(2)] + [F(2)+F(1)]]
+= &hellip;
+= 8</p>
 <pre><code>
 
 If you notice, we are computing the `fib()` for all the positions less than 'N' from scratch to compute the `fib(N)`. And we could have easily stopped this process earlier if we had some of the values computed beforehand.
@@ -166,12 +163,8 @@ def fib_mem(n):
     fib_list.append(fib_val) 
     return fib_val   
 
-</code></pre>
-
-<p>In this new approach, we look for the value of f(n) in the list. If it exists we simply return it, else we compute it and store it in the list, so we can speed up future computations.</p>
-
+</code></pre><p>In this new approach, we look for the value of f(n) in the list. If it exists we simply return it, else we compute it and store it in the list, so we can speed up future computations.</p>
 <p>I was amazed to see the improvement in the speed of the computation. Infact computing using the pure recursive method for values &gt; 39 was so slow, that I decided to not compute for N &gt; 39. And, the meomized version is blazingly fast.</p>
-
 <pre><code>=====Non Mem=====
 fibonacci(35) -&gt;  9227465
 T = 11.2710268497
@@ -196,7 +189,6 @@ T = 2.88486480713e-05
 fibonacci_mem(155) -&gt;  110560307156090817237632754212345
 T = 0.000208854675293
 </code></pre>
-
             </div>
         </article>
 

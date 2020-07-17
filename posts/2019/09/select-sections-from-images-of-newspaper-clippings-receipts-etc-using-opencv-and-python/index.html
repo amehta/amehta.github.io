@@ -28,7 +28,7 @@
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -42,16 +42,14 @@
 <meta itemprop="description" content="We often take pictures of menus, receipts, and message boards etc. They are often not aligned properly. In this post, I will show you how to select the pertinet parts and allign them as correctly as possible.
    Original Processed          Let&rsquo;s get started.
 1. Find the anchor points We will first load the image of a newspaper clipping containing the sudoku puzzle.">
-
-
 <meta itemprop="datePublished" content="2019-09-25T13:53:05-05:00" />
 <meta itemprop="dateModified" content="2019-09-25T13:53:05-05:00" />
 <meta itemprop="wordCount" content="246">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="python,opencv," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="python,opencv," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="Select Sections From Images of Newspaper clippings, receipts etc Using Opencv and Python"/>
@@ -132,10 +130,7 @@
             
 
             <div class="post-content">
-                
-
-<p>We often take pictures of menus, receipts, and message boards etc. They are often not aligned properly. In this post, I will show you how to select the pertinet parts and allign them as correctly as possible.</p>
-
+                <p>We often take pictures of menus, receipts, and message boards etc. They are often not aligned properly. In this post, I will show you how to select the pertinet parts and allign them as correctly as possible.</p>
 <table>
 <thead>
 <tr>
@@ -143,41 +138,32 @@
 <th align="center">Processed</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center"><img src="https://amehta.github.io/img/sudoku_newspaper_small.jpg" alt="Sudoku " /></td>
-<td align="center"><img src="https://amehta.github.io/img/sudoku.jpg" alt="Sudoku" /></td>
+<td align="center"><img src="https://amehta.github.io/img/sudoku_newspaper_small.jpg" alt="Sudoku "></td>
+<td align="center"><img src="https://amehta.github.io/img/sudoku.jpg" alt="Sudoku"></td>
 </tr>
 </tbody>
 </table>
-
 <p>Let&rsquo;s get started.</p>
-
 <h3 id="1-find-the-anchor-points">1. Find the anchor points</h3>
-
 <p>We will first load the image of a newspaper clipping containing the sudoku puzzle. Next, we will find out the cordinates of the four corners of the puzzle in the original image.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">image <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sudoku_newspaper_small.jpg&#34;</span> 
 original_img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>imread(image)
 cv2<span style="color:#f92672">.</span>imshow(<span style="color:#e6db74">&#34;menu orig&#34;</span>, original_img)
-cv2<span style="color:#f92672">.</span>waitKey(<span style="color:#ae81ff">0</span>)</code></pre></div>
-<p>Once the image loads you can find the cordinates of the four corners by hovering the mouse pointer around it. Once you have noted them down, store the four corners of the sudoku puzzle in a numpy array as top_left, top_right, bottom_left, and bottom_right respectively.</p>
-
+cv2<span style="color:#f92672">.</span>waitKey(<span style="color:#ae81ff">0</span>)
+</code></pre></div><p>Once the image loads you can find the cordinates of the four corners by hovering the mouse pointer around it. Once you have noted them down, store the four corners of the sudoku puzzle in a numpy array as top_left, top_right, bottom_left, and bottom_right respectively.</p>
 <pre><code>pts1 = np.float32([[22,95],[290,102],[0,383],[318,370]])
-</code></pre>
-
-<h3 id="2-select-and-transform">2. Select and transform</h3>
-
+</code></pre><h3 id="2-select-and-transform">2. Select and transform</h3>
 <p>Now, that we have the bounding points selected, we can apply the transformation
 using the function <code>cv2.getPerspectiveTransform()</code> by passing it the selected points <code>pts1</code> and target cordinates <code>pts2</code> for the size of the transformnation. I decided to eyeball the length and width of the sudoku puzzle to be of the size 250X250</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pts2 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>float32([[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>],[<span style="color:#ae81ff">250</span>,<span style="color:#ae81ff">0</span>],[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">250</span>],[<span style="color:#ae81ff">250</span>,<span style="color:#ae81ff">250</span>]])
-M <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>getPerspectiveTransform(pts1,pts2)</code></pre></div>
-<p>Next, we can apply the transformation to the original image and extract the relevant section using
+M <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>getPerspectiveTransform(pts1,pts2)
+</code></pre></div><p>Next, we can apply the transformation to the original image and extract the relevant section using
 <code>cv2.warpPerspective()</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">target_img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>warpPerspective(original_img,M,(<span style="color:#ae81ff">252</span>,<span style="color:#ae81ff">252</span>))
-cv2<span style="color:#f92672">.</span>imwrite(<span style="color:#e6db74">&#34;sudoku.jpg&#34;</span>, target_img)</code></pre></div>
-<p>Feel free to play with other images (menus, receipts, signs etc) you have in your cameral roll :)</p>
-
+cv2<span style="color:#f92672">.</span>imwrite(<span style="color:#e6db74">&#34;sudoku.jpg&#34;</span>, target_img)
+</code></pre></div><p>Feel free to play with other images (menus, receipts, signs etc) you have in your cameral roll :)</p>
 <p>Stay tuned for more posts on OpenCV.</p>
 
             </div>

@@ -29,7 +29,7 @@ Getting the first Character let mySwiftString = &amp;#34;Swift is awesome!&amp;#
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -44,16 +44,14 @@ Getting the first Character let mySwiftString = &amp;#34;Swift is awesome!&amp;#
 The swift string class does not provide the ability to get a character at a specific index because of its native support for UTF characters.
 In the code snippets below, we will walk through code to access elements of a string at speific positions.
 Getting the first Character let mySwiftString = &#34;Swift is awesome!&#34; //Getting the first Character mySwiftString.first let firstIndex = mySwiftString.">
-
-
 <meta itemprop="datePublished" content="2020-04-21T22:23:31-07:00" />
 <meta itemprop="dateModified" content="2020-04-21T22:23:31-07:00" />
 <meta itemprop="wordCount" content="187">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="swift,string,swift5.2," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="swift,string,swift5.2," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="Access Swift String by Index"/>
@@ -132,14 +130,9 @@ Getting the first Character let mySwiftString = &#34;Swift is awesome!&#34; //Ge
             
 
             <div class="post-content">
-                
-
-<p>Last Run on XCODE 11.4 / Swift 5.2</p>
-
+                <p>Last Run on XCODE 11.4 / Swift 5.2</p>
 <p>The <strong>swift</strong> string class does not provide the ability to get a character at a specific index because of its native support for UTF characters.</p>
-
 <p>In the code snippets below, we will walk through code to access elements of a string at speific positions.</p>
-
 <h4 id="getting-the-first-character">Getting the first Character</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> mySwiftString = <span style="color:#e6db74">&#34;Swift is awesome!&#34;</span>
 
@@ -147,16 +140,17 @@ Getting the first Character let mySwiftString = &#34;Swift is awesome!&#34; //Ge
 mySwiftString.first
 
 <span style="color:#66d9ef">let</span> firstIndex = mySwiftString.startIndex
-mySwiftString[firstIndex]</code></pre></div>
-<h4 id="getting-the-last-character">Getting the last Character</h4>
+mySwiftString[firstIndex]
+</code></pre></div><h4 id="getting-the-last-character">Getting the last Character</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> mySwiftString = <span style="color:#e6db74">&#34;Swift is awesome!&#34;</span>
 
 <span style="color:#75715e">//Getting the last Character</span>
 mySwiftString.last
 
 <span style="color:#66d9ef">let</span> lastIndex = mySwiftString.index(before: mySwiftString.endIndex)
-mySwiftString[lastIndex]</code></pre></div>
-<h4 id="getting-the-2nd-character">Getting the 2nd Character</h4>
+mySwiftString[lastIndex]
+
+</code></pre></div><h4 id="getting-the-2nd-character">Getting the 2nd Character</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> mySwiftString = <span style="color:#e6db74">&#34;Swift is awesome!&#34;</span>
 
 <span style="color:#75715e">//Getting the 2nd Character</span>
@@ -164,19 +158,21 @@ mySwiftString[lastIndex]</code></pre></div>
 mySwiftString[secondIndex_Ver1]
 
 <span style="color:#66d9ef">let</span> secondIndex_Ver2 = mySwiftString.index(firstIndex, offsetBy: <span style="color:#ae81ff">1</span>)
-mySwiftString[secondIndex_Ver2]</code></pre></div>
-<h4 id="getting-the-nth-character-from-start-say-3rd">Getting the Nth Character from start ( Say 3rd)</h4>
+mySwiftString[secondIndex_Ver2]
+</code></pre></div><h4 id="getting-the-nth-character-from-start--say-3rd">Getting the Nth Character from start ( Say 3rd)</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> mySwiftString = <span style="color:#e6db74">&#34;Swift is awesome!&#34;</span>
 
 <span style="color:#75715e">//Getting the Nth Character from start ( Say 3rd )</span>
 <span style="color:#66d9ef">let</span> thirdIndex = mySwiftString.index(firstIndex, offsetBy: <span style="color:#ae81ff">2</span>)
-mySwiftString[thirdIndex]</code></pre></div>
-<h4 id="getting-the-nth-character-from-end-say-3rd-last">Getting the Nth Character from end ( Say 3rd last )</h4>
+mySwiftString[thirdIndex]
+
+</code></pre></div><h4 id="getting-the-nth-character-from-end--say-3rd-last-">Getting the Nth Character from end ( Say 3rd last )</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> mySwiftString = <span style="color:#e6db74">&#34;Swift is awesome!&#34;</span>
 
 <span style="color:#75715e">//Getting the Nth Character from end ( Say 3rd last )</span>
 <span style="color:#66d9ef">let</span> thirdLastIndex = mySwiftString.index(lastIndex, offsetBy: <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)
-mySwiftString[thirdLastIndex]</code></pre></div>
+mySwiftString[thirdLastIndex]
+</code></pre></div>
             </div>
         </article>
 

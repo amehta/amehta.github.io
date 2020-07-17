@@ -1,58 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://amehta.github.io/categories/</loc>
-    <lastmod>2020-05-03T22:18:51-07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-07-15T21:32:39-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://amehta.github.io/tags/</loc>
-    <lastmod>2020-05-03T22:18:51-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/</loc>
-    <lastmod>2020-05-03T22:18:51-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/tips/</loc>
-    <lastmod>2020-05-03T22:18:51-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/tips/user-input-in-swift-commandline/</loc>
-    <lastmod>2020-05-03T22:18:51-07:00</lastmod>
+    <loc>https://amehta.github.io/tips/custom-view-modifiers-in-swift-ui/</loc>
+    <lastmod>2020-07-15T21:32:39-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://amehta.github.io/categories/programming/</loc>
-    <lastmod>2020-05-03T22:18:51-07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-07-15T21:32:39-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/swift/</loc>
+    <lastmod>2020-07-15T21:32:39-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/swift5.2/</loc>
+    <lastmod>2020-07-15T21:32:39-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/swiftui/</loc>
+    <lastmod>2020-07-15T21:32:39-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/</loc>
+    <lastmod>2020-07-15T21:32:39-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tips/</loc>
+    <lastmod>2020-07-15T21:32:39-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://amehta.github.io/tags/string/</loc>
     <lastmod>2020-05-03T22:18:51-07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://amehta.github.io/tags/swift/</loc>
+    <loc>https://amehta.github.io/tips/user-input-in-swift-commandline/</loc>
     <lastmod>2020-05-03T22:18:51-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/tags/swift5.2/</loc>
-    <lastmod>2020-05-03T22:18:51-07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -78,7 +75,6 @@
   <url>
     <loc>https://amehta.github.io/tags/spritekit/</loc>
     <lastmod>2020-04-10T09:00:05-07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -87,26 +83,28 @@
   </url>
   
   <url>
-    <loc>https://amehta.github.io/posts/</loc>
-    <lastmod>2019-09-25T13:53:05-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/posts/2019/09/select-sections-from-images-of-newspaper-clippings-receipts-etc-using-opencv-and-python/</loc>
-    <lastmod>2019-09-25T13:53:05-05:00</lastmod>
+    <loc>https://amehta.github.io/</loc>
+    <lastmod>2020-02-27T10:01:08-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://amehta.github.io/tags/opencv/</loc>
     <lastmod>2019-09-25T13:53:05-05:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/posts/</loc>
+    <lastmod>2019-09-25T13:53:05-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://amehta.github.io/tags/python/</loc>
     <lastmod>2019-09-25T13:53:05-05:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/posts/2019/09/select-sections-from-images-of-newspaper-clippings-receipts-etc-using-opencv-and-python/</loc>
+    <lastmod>2019-09-25T13:53:05-05:00</lastmod>
   </url>
   
   <url>
@@ -125,20 +123,18 @@
   </url>
   
   <url>
-    <loc>https://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</loc>
-    <lastmod>2019-03-11T00:21:00-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://amehta.github.io/tags/golang/</loc>
     <lastmod>2019-03-11T00:21:00-08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amehta.github.io/tags/unix/</loc>
     <lastmod>2019-03-11T00:21:00-08:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</loc>
+    <lastmod>2019-03-11T00:21:00-08:00</lastmod>
   </url>
   
   <url>
@@ -149,7 +145,6 @@
   <url>
     <loc>https://amehta.github.io/tags/ls/</loc>
     <lastmod>2019-02-28T00:08:00-08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -163,20 +158,18 @@
   </url>
   
   <url>
-    <loc>https://amehta.github.io/posts/2012/01/what-is-memoization/</loc>
-    <lastmod>2012-01-07T00:08:00-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://amehta.github.io/tags/dynamic-programming/</loc>
     <lastmod>2012-01-07T00:08:00-08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amehta.github.io/tags/memoization/</loc>
     <lastmod>2012-01-07T00:08:00-08:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/posts/2012/01/what-is-memoization/</loc>
+    <lastmod>2012-01-07T00:08:00-08:00</lastmod>
   </url>
   
   <url>
@@ -187,7 +180,21 @@
   <url>
     <loc>https://amehta.github.io/tags/pygame/</loc>
     <lastmod>2011-11-06T00:08:00-08:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/icmp/</loc>
+    <lastmod>2011-09-28T00:08:00-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/categories/networking/</loc>
+    <lastmod>2011-09-28T00:08:00-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/traceroute/</loc>
+    <lastmod>2011-09-28T00:08:00-08:00</lastmod>
   </url>
   
   <url>
@@ -196,27 +203,13 @@
   </url>
   
   <url>
-    <loc>https://amehta.github.io/tags/icmp/</loc>
-    <lastmod>2011-09-28T00:08:00-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/categories/networking/</loc>
-    <lastmod>2011-09-28T00:08:00-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amehta.github.io/tags/traceroute/</loc>
-    <lastmod>2011-09-28T00:08:00-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://amehta.github.io/tags/dhcp/</loc>
     <lastmod>2011-09-10T00:08:00-08:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amehta.github.io/tags/dropbox/</loc>
+    <lastmod>2011-09-10T00:08:00-08:00</lastmod>
   </url>
   
   <url>
@@ -230,21 +223,13 @@
   </url>
   
   <url>
-    <loc>https://amehta.github.io/tags/dropbox/</loc>
-    <lastmod>2011-09-10T00:08:00-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://amehta.github.io/tags/storage/</loc>
     <lastmod>2011-09-10T00:08:00-08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amehta.github.io/tags/tcpdump/</loc>
     <lastmod>2011-09-10T00:08:00-08:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

@@ -27,7 +27,7 @@ Some basic information First, we execute ls command line utility to get some pre
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -40,16 +40,14 @@ Some basic information First, we execute ls command line utility to get some pre
 <meta name="theme-color" content="#252627"><meta itemprop="name" content="ls implementation in python3">
 <meta itemprop="description" content="&ldquo;ls&rdquo; is unix utility that lists the files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the ls command line utility.
 Some basic information First, we execute ls command line utility to get some preliminary information of a directory. Here is an example of the output from the ls command on a sample directory.">
-
-
 <meta itemprop="datePublished" content="2019-02-28T00:08:00-08:00" />
 <meta itemprop="dateModified" content="2019-02-28T00:08:00-08:00" />
 <meta itemprop="wordCount" content="687">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="python,unix,ls," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="python,unix,ls," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="ls implementation in python3"/>
@@ -129,16 +127,13 @@ Some basic information First, we execute ls command line utility to get some pre
             
 
             <div class="post-content">
-                
-
-<p><a href="http://en.wikipedia.org/wiki/Ls" target="_blank"><strong>&ldquo;ls&rdquo;</strong></a> is unix utility that lists the  files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the <strong><code>ls</code></strong> command line utility.</p>
-
+                <p><a href="http://en.wikipedia.org/wiki/Ls"><strong>&ldquo;ls&rdquo;</strong></a> is unix utility that lists the  files and directories in the current path or a user passed path. In this post we will explore how to achive such a basic implementation if it using python. Lets explore the <strong><code>ls</code></strong> command line utility.</p>
 <h3 id="some-basic-information">Some basic information</h3>
-
 <p>First, we execute <strong><code>ls</code></strong> command line utility to get some preliminary information of a directory. Here is an example of the output from the <strong><code>ls</code></strong> command on a sample directory.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Apurvas<span style="color:#f92672">-</span>MacBook<span style="color:#f92672">-</span>Pro:Mango apurva<span style="color:#960050;background-color:#1e0010">$</span> ls
-Mango<span style="color:#f92672">.</span>db	app<span style="color:#f92672">.</span>py		config<span style="color:#f92672">.</span>py	model<span style="color:#f92672">.</span>py	sample_data<span style="color:#f92672">.</span>txt	src		templates</code></pre></div>
-<p>In order to accomplish this in python, you would need to import the built-in standard library <strong><code>os</code></strong> and pass a directorty path name to the function <strong><code>listdir()</code></strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+Apurvas<span style="color:#f92672">-</span>MacBook<span style="color:#f92672">-</span>Pro:Mango apurva<span style="color:#960050;background-color:#1e0010">$</span> ls
+Mango<span style="color:#f92672">.</span>db	app<span style="color:#f92672">.</span>py		config<span style="color:#f92672">.</span>py	model<span style="color:#f92672">.</span>py	sample_data<span style="color:#f92672">.</span>txt	src		templates
+</code></pre></div><p>In order to accomplish this in python, you would need to import the built-in standard library <strong><code>os</code></strong> and pass a directorty path name to the function <strong><code>listdir()</code></strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_items_in_</span>(path):
@@ -147,13 +142,12 @@ Mango<span style="color:#f92672">.</span>db	app<span style="color:#f92672">.</sp
 show_items_in_(<span style="color:#e6db74">&#34;.&#34;</span>)
 <span style="color:#75715e">#=&gt; </span>
 Apurvas<span style="color:#f92672">-</span>MacBook<span style="color:#f92672">-</span>Pro:Mango apurva<span style="color:#960050;background-color:#1e0010">$</span> python3<span style="color:#f92672">.</span><span style="color:#ae81ff">7</span> ls<span style="color:#f92672">.</span>py 
-config<span style="color:#f92672">.</span>py ls<span style="color:#f92672">.</span>py Mango<span style="color:#f92672">.</span>db model<span style="color:#f92672">.</span>py app<span style="color:#f92672">.</span>py templates sample_data<span style="color:#f92672">.</span>txt src </code></pre></div>
-<p><code>#</code>🤓 Formatting the ouput to match exactly like the native unix tool is left as an exercise for the reader. (Read about python f-strings)</p>
-
+config<span style="color:#f92672">.</span>py ls<span style="color:#f92672">.</span>py Mango<span style="color:#f92672">.</span>db model<span style="color:#f92672">.</span>py app<span style="color:#f92672">.</span>py templates sample_data<span style="color:#f92672">.</span>txt src 
+</code></pre></div><p><code>#</code>🤓 Formatting the ouput to match exactly like the native unix tool is left as an exercise for the reader. (Read about python f-strings)</p>
 <h3 id="a-tad-bit-more-details">A tad bit more details</h3>
-
 <p>Lets try another option <strong><code>ls -l</code></strong> to see the file listing with more details.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Apurvas<span style="color:#f92672">-</span>MacBook<span style="color:#f92672">-</span>Pro:Mango apurva<span style="color:#960050;background-color:#1e0010">$</span> ls <span style="color:#f92672">-</span>l
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+Apurvas<span style="color:#f92672">-</span>MacBook<span style="color:#f92672">-</span>Pro:Mango apurva<span style="color:#960050;background-color:#1e0010">$</span> ls <span style="color:#f92672">-</span>l
 total <span style="color:#ae81ff">24</span>
 <span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span>  <span style="color:#ae81ff">1</span> apurva  staff    <span style="color:#ae81ff">0</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">14</span> Mango<span style="color:#f92672">.</span>db
 <span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span>  <span style="color:#ae81ff">1</span> apurva  staff   <span style="color:#ae81ff">40</span> Mar  <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">15</span> app<span style="color:#f92672">.</span>py
@@ -162,9 +156,8 @@ total <span style="color:#ae81ff">24</span>
 <span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span>  <span style="color:#ae81ff">1</span> apurva  staff   <span style="color:#ae81ff">80</span> Mar  <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">15</span> model<span style="color:#f92672">.</span>py
 <span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span>  <span style="color:#ae81ff">1</span> apurva  staff    <span style="color:#ae81ff">0</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">14</span> sample_data<span style="color:#f92672">.</span>txt
 drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x  <span style="color:#ae81ff">2</span> apurva  staff   <span style="color:#ae81ff">64</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">15</span> src
-drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x  <span style="color:#ae81ff">2</span> apurva  staff   <span style="color:#ae81ff">64</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">15</span> templates</code></pre></div>
-<p>In the above output from <strong><code>ls -l</code></strong> we get a lot more details like file permissions, the number of links or directorie, owner name, group name, file size (bytes), and time of modification apart from the name of the file.</p>
-
+drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x  <span style="color:#ae81ff">2</span> apurva  staff   <span style="color:#ae81ff">64</span> Feb <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">13</span>:<span style="color:#ae81ff">15</span> templates
+</code></pre></div><p>In the above output from <strong><code>ls -l</code></strong> we get a lot more details like file permissions, the number of links or directorie, owner name, group name, file size (bytes), and time of modification apart from the name of the file.</p>
 <p>In python, we can start with separating out files and directories. This can be achieved by passing the output of <strong><code>os.listdir()</code></strong> to the functions <strong><code>os.path.isfile()</code></strong> and <strong><code>os.path.isdir()</code></strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_only_files_in_</span>(path):
   <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(path):
@@ -176,9 +169,9 @@ drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x
   <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(dir_path):
     <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isdir((entry)):
       <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{entry}&#39;</span>)
-<span style="color:#75715e">#=&gt; templates src </span></code></pre></div>
-<p><code>#</code>🤓What other cool operations can we run from the <strong><code>os.path</code></strong> class? (Read the documentation <a href="https://docs.python.org/3/library/os.path.html" target="_blank">os-path-doc</a>)</p>
+<span style="color:#75715e">#=&gt; templates src </span>
 
+</code></pre></div><p><code>#</code>🤓What other cool operations can we run from the <strong><code>os.path</code></strong> class? (Read the documentation <a href="https://docs.python.org/3/library/os.path.html">os-path-doc</a>)</p>
 <p>As you might have observed, we are able to glean a lot more information from the output of the command <strong><code>ls -l</code></strong>. We can get similar details about a file/directory using the <strong><code>os.stat()</code></strong> function. We also be importing the stat library to make sense of the output from <strong><code>os.stat()</code></strong>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
 
@@ -191,8 +184,8 @@ drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x
 config<span style="color:#f92672">.</span>py os<span style="color:#f92672">.</span>stat_result(st_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">33188</span>, st_ino<span style="color:#f92672">=</span><span style="color:#ae81ff">8605068710</span>, st_dev<span style="color:#f92672">=</span><span style="color:#ae81ff">16777220</span>, st_nlink<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, st_uid<span style="color:#f92672">=</span><span style="color:#ae81ff">501</span>, st_gid<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, st_size<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, st_atime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551855990</span>, st_mtime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551855990</span>, st_ctime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551855990</span>) 
 <span style="color:#f92672">...</span>
 <span style="color:#f92672">...</span>
-src os<span style="color:#f92672">.</span>stat_result(st_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">16877</span>, st_ino<span style="color:#f92672">=</span><span style="color:#ae81ff">8605068718</span>, st_dev<span style="color:#f92672">=</span><span style="color:#ae81ff">16777220</span>, st_nlink<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, st_uid<span style="color:#f92672">=</span><span style="color:#ae81ff">501</span>, st_gid<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, st_size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, st_atime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551896296</span>, st_mtime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551388533</span>, st_ctime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551388533</span>) </code></pre></div>
-<p>The <strong><code>os.stat()</code></strong> gives us a lot of details about the path passed to it. Let&rsquo;s decode a few of the fields to make some sense out of it for us mortals.</p>
+src os<span style="color:#f92672">.</span>stat_result(st_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">16877</span>, st_ino<span style="color:#f92672">=</span><span style="color:#ae81ff">8605068718</span>, st_dev<span style="color:#f92672">=</span><span style="color:#ae81ff">16777220</span>, st_nlink<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, st_uid<span style="color:#f92672">=</span><span style="color:#ae81ff">501</span>, st_gid<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, st_size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, st_atime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551896296</span>, st_mtime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551388533</span>, st_ctime<span style="color:#f92672">=</span><span style="color:#ae81ff">1551388533</span>) 
+</code></pre></div><p>The <strong><code>os.stat()</code></strong> gives us a lot of details about the path passed to it. Let&rsquo;s decode a few of the fields to make some sense out of it for us mortals.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
 <span style="color:#f92672">import</span> stat
 
@@ -209,8 +202,8 @@ src os<span style="color:#f92672">.</span>stat_result(st_mode<span style="color:
 <span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> app<span style="color:#f92672">.</span>py
 drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x templates
 <span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> sample_data<span style="color:#f92672">.</span>txt
-drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x src</code></pre></div>
-<p>As a keen observer, you might have noticed that we have to first make a call to <strong><code>os.listdir()</code></strong> to get all the file/directory listings and then another call to <strong><code>os.stat()</code></strong> to get further details about them. Woudn&rsquo;t it be better if we can get both results in the same pass? Fortunatley in <strong><code>python3.6</code></strong> and above you can, using the function <strong><code>os.scandir()</code></strong></p>
+drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x src
+</code></pre></div><p>As a keen observer, you might have noticed that we have to first make a call to <strong><code>os.listdir()</code></strong> to get all the file/directory listings and then another call to <strong><code>os.stat()</code></strong> to get further details about them. Woudn&rsquo;t it be better if we can get both results in the same pass? Fortunatley in <strong><code>python3.6</code></strong> and above you can, using the function <strong><code>os.scandir()</code></strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_stats_of_items_in</span>(path):
     total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>scandir():
@@ -224,9 +217,8 @@ drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x
 <span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> app<span style="color:#f92672">.</span>py
 drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x templates
 <span style="color:#f92672">-</span>rw<span style="color:#f92672">-</span>r<span style="color:#f92672">--</span>r<span style="color:#f92672">--</span> sample_data<span style="color:#f92672">.</span>txt
-drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x src</code></pre></div>
-<p><code>#</code>🤓 Formatting the ouput to match exactly like the output of the <strong><code>ls -l</code></strong> is left as an exercise for the reader. (Read about interpreting <strong><code>os.stat()</code></strong> attributes)</p>
-
+drwxr<span style="color:#f92672">-</span>xr<span style="color:#f92672">-</span>x src
+</code></pre></div><p><code>#</code>🤓 Formatting the ouput to match exactly like the output of the <strong><code>ls -l</code></strong> is left as an exercise for the reader. (Read about interpreting <strong><code>os.stat()</code></strong> attributes)</p>
 <p>Hope you had fun reading this and it inspires you to dig more into both <strong><code>Python</code></strong> and <strong><code>Unix</code></strong> utilities. I will update with a link to my implementation of <strong><code>ls</code></strong> here as well.</p>
 
             </div>

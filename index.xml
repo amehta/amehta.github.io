@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech Log</title>
@@ -6,10 +6,22 @@
     <description>Recent content on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 03 May 2020 22:18:51 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 27 Feb 2020 10:01:08 -0800</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Custom View Modifiers in SwiftUI</title>
+      <link>https://amehta.github.io/tips/custom-view-modifiers-in-swift-ui/</link>
+      <pubDate>Wed, 15 Jul 2020 21:32:39 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/custom-view-modifiers-in-swift-ui/</guid>
+      <description>Last Run on XCODE 11.6 / Swift 5.2
+In SwiftUI View(s) are the building blocks of the UI. All changes to the Views are done by calling special functions called modfiers that wrap up the original View with the needful changes and return a View back.
+In the example below, we apply a few modifiers to a Text view to create the impression of a highlighted text.
+Text(&amp;#34;I ♥️ SwiftUI&amp;#34;) .</description>
+    </item>
     
     <item>
       <title>User Input in Swift commandline</title>
@@ -20,7 +32,7 @@
       <description>Last Run on XCODE 11.4 / Swift 5.2
 If you are writing a command line tool and need user input, the readLine() function can be used for it. It returns an optional
 let input = readLine() And, if you dont want the ending new line character, you can set the strippingNewline parameter to true.
-let input = readLine(strippingNewline: true)</description>
+let input = readLine(strippingNewline: true) </description>
     </item>
     
     <item>
@@ -113,18 +125,6 @@ If you choose to use my Service, then you agree to the collection and use of inf
       <description>In a series of upcoming blog posts, I will be using OpenCV to manipulate images. In this post, I will be adding text to an image (below), I took of a Dervish monastery at the beautiful village of Blagaj in Bosnia.
    Resized Original Resized Original w/ text          Lets get started.
  Read Image Resize Image by aspect ratio Add text to resized image Save resized image with text  1.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://amehta.github.io/about/</link>
-      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://amehta.github.io/about/</guid>
-      <description>I’m just another earthling who likes traveling, programming, learning, writing, and making stuff.
-That’s all that I can think of right now. Hopefully I’ll add something more to this later on. 😅
-Curious about me? Use the social links above to check out my profiles.
-This blog is powered by Hugo, the world’s fastest framework for building websites. It is written in Go.</description>
     </item>
     
   </channel>

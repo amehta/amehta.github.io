@@ -26,7 +26,7 @@
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -38,16 +38,14 @@
 <link rel="shortcut icon" href="https://amehta.github.io/favicon.ico">
 <meta name="theme-color" content="#252627"><meta itemprop="name" content="Using Python&#39;s map() AND reduce()">
 <meta itemprop="description" content="Sum of the Squares of the first 5 numbers In this post I will try to use the map() and reduce() functions to compute the sum of the squares of the first five numbers. The map() function takes a function and an iterable as a parameter. The items of the iterable are fed to the function to create a new list. The reduce() function also takes a function and an iterable as a parameter.">
-
-
 <meta itemprop="datePublished" content="2012-01-29T00:08:00-08:00" />
 <meta itemprop="dateModified" content="2012-01-29T00:08:00-08:00" />
 <meta itemprop="wordCount" content="277">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="python," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="python," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="Using Python&#39;s map() AND reduce()"/>
@@ -126,25 +124,30 @@
             
 
             <div class="post-content">
-                
-
-<h3 id="sum-of-the-squares-of-the-first-5-numbers">Sum of the Squares of the first 5 numbers</h3>
-
+                <h3 id="sum-of-the-squares-of-the-first-5-numbers">Sum of the Squares of the first 5 numbers</h3>
 <p>In this post I will try to use the <code>map()</code> and <code>reduce()</code> functions to compute the sum of the squares of the first five numbers. The <code>map()</code> function takes a function and an iterable as a parameter. The items of the iterable are fed to the function to create a new list. The <code>reduce()</code> function also takes a function and an iterable as a parameter. However, this takes two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value.</p>
-
 <p>So, the first 5 numbers are 1, 2, 3, 4, 5. And, the first task would be to find the the squares of each of these numbers. Lets start with writing a simple function that finds the square of a number.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sqr</span>(x):         
-    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>x</code></pre></div>
-<p>Now, that we know how to find the squares, lets write a function that can find the sum of two numbers.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum</span>(x,y):         
-    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">+</span>y</code></pre></div>
-<p>We can get the first 5 numbers using the <code>range()</code> function into a list. The next step would be to find the square of each numbers. This can be achieved by passing each of the elements from the list into the <code>sqr()</code> function using python’s built-in <code>map()</code> function.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>)     
-squares <span style="color:#f92672">=</span> map(sqr, a)</code></pre></div>
-<p>Once, we have the the squares in a list, we would now want to add each of these items to find the sum of the squares.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sum_of_squares <span style="color:#f92672">=</span> reduce(sum, squares)</code></pre></div>
-<p>The full program listing</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>)      
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sqr</span>(x):         
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>x
+
+</code></pre></div><p>Now, that we know how to find the squares, lets write a function that can find the sum of two numbers.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum</span>(x,y):         
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">+</span>y
+
+</code></pre></div><p>We can get the first 5 numbers using the <code>range()</code> function into a list. The next step would be to find the square of each numbers. This can be achieved by passing each of the elements from the list into the <code>sqr()</code> function using python’s built-in <code>map()</code> function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+a <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>)     
+squares <span style="color:#f92672">=</span> map(sqr, a)
+
+</code></pre></div><p>Once, we have the the squares in a list, we would now want to add each of these items to find the sum of the squares.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+sum_of_squares <span style="color:#f92672">=</span> reduce(sum, squares)
+
+</code></pre></div><p>The full program listing</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+a <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>)      
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sqr</span>(x):         
     <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>x      
@@ -153,7 +156,9 @@ squares <span style="color:#f92672">=</span> map(sqr, a)</code></pre></div>
     <span style="color:#66d9ef">return</span> x<span style="color:#f92672">+</span>y     
 
 squares <span style="color:#f92672">=</span> map(sqr, a)     
-sum_of_squares <span style="color:#f92672">=</span> reduce(sum, squares)</code></pre></div>
+sum_of_squares <span style="color:#f92672">=</span> reduce(sum, squares)
+
+</code></pre></div>
             </div>
         </article>
 

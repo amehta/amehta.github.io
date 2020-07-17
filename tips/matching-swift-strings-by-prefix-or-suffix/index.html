@@ -29,7 +29,7 @@ let fileName1 = &amp;#34;InstagramCover.jpg&amp;#34; let fileName2 = &amp;#34;Sn
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -44,16 +44,14 @@ let fileName1 = &amp;#34;InstagramCover.jpg&amp;#34; let fileName2 = &amp;#34;Sn
 A simple way to check if a string starts or ends with a certain pattern is to use the method hasSuffix and hasPrefix available to Strings.
 In the code snippet below, we will check if a string begins or ends with a specific text pattern.
 let fileName1 = &#34;InstagramCover.jpg&#34; let fileName2 = &#34;SnapchatCover.doc&#34; fileName1.hasSuffix(&#34;jpg&#34;) // result --&gt; True fileName2.hasSuffix(&#34;jpg&#34;) // result --&gt; False fileName1.">
-
-
 <meta itemprop="datePublished" content="2020-04-28T21:56:43-07:00" />
 <meta itemprop="dateModified" content="2020-04-28T21:56:43-07:00" />
 <meta itemprop="wordCount" content="154">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="swift,string,swift5.2," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="swift,string,swift5.2," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="Matching Swift Strings by Prefix or Suffix"/>
@@ -133,9 +131,7 @@ let fileName1 = &#34;InstagramCover.jpg&#34; let fileName2 = &#34;SnapchatCover.
 
             <div class="post-content">
                 <p>Last Run on XCODE 11.4 / Swift 5.2</p>
-
 <p>A simple way to check if a string starts or ends with a certain pattern is to use the method <code>hasSuffix</code> and <code>hasPrefix</code> available to Strings.</p>
-
 <p>In the code snippet below, we will check if a string begins or ends with a specific text pattern.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> fileName1 = <span style="color:#e6db74">&#34;InstagramCover.jpg&#34;</span>
 <span style="color:#66d9ef">let</span> fileName2 = <span style="color:#e6db74">&#34;SnapchatCover.doc&#34;</span>
@@ -144,8 +140,9 @@ fileName1.hasSuffix(<span style="color:#e6db74">&#34;jpg&#34;</span>) <span styl
 fileName2.hasSuffix(<span style="color:#e6db74">&#34;jpg&#34;</span>) <span style="color:#75715e">// result --&gt; False</span>
 
 fileName1.hasPrefix(<span style="color:#e6db74">&#34;Instagram&#34;</span>) <span style="color:#75715e">// --&gt; True</span>
-fileName2.hasPrefix(<span style="color:#e6db74">&#34;Facebook&#34;</span>) <span style="color:#75715e">// result --&gt; False</span></code></pre></div>
-<p>If we need to check against multiple variations, we can&rsquo;t just use <code>hasSuffix</code>. Instead, we will have
+fileName2.hasPrefix(<span style="color:#e6db74">&#34;Facebook&#34;</span>) <span style="color:#75715e">// result --&gt; False</span>
+
+</code></pre></div><p>If we need to check against multiple variations, we can&rsquo;t just use <code>hasSuffix</code>. Instead, we will have
 to use it along with another method <code>contains</code>. Checkout the code snippet below.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> fileName1 = <span style="color:#e6db74">&#34;InstagramCover.png&#34;</span>
 <span style="color:#66d9ef">let</span> fileName2 = <span style="color:#e6db74">&#34;SnapchatCover.doc&#34;</span>
@@ -157,7 +154,9 @@ fileExtensions.contains(<span style="color:#66d9ef">where</span>: fileName1.hasS
 fileExtensions.contains(<span style="color:#66d9ef">where</span>: fileName2.hasSuffix) <span style="color:#75715e">// result --&gt; False</span>
 
 socialMediaNameFilePrefixes.contains(<span style="color:#66d9ef">where</span>: fileName1.hasPrefix) <span style="color:#75715e">// result --&gt; True</span>
-socialMediaNameFilePrefixes.contains(<span style="color:#66d9ef">where</span>: fileName2.hasPrefix) <span style="color:#75715e">// result --&gt; False</span></code></pre></div>
+socialMediaNameFilePrefixes.contains(<span style="color:#66d9ef">where</span>: fileName2.hasPrefix) <span style="color:#75715e">// result --&gt; False</span>
+
+</code></pre></div>
             </div>
         </article>
 

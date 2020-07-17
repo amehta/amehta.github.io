@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>programming on Tech Log</title>
@@ -6,10 +6,22 @@
     <description>Recent content in programming on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 03 May 2020 22:18:51 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2020 21:32:39 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Custom View Modifiers in SwiftUI</title>
+      <link>https://amehta.github.io/tips/custom-view-modifiers-in-swift-ui/</link>
+      <pubDate>Wed, 15 Jul 2020 21:32:39 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/custom-view-modifiers-in-swift-ui/</guid>
+      <description>Last Run on XCODE 11.6 / Swift 5.2
+In SwiftUI View(s) are the building blocks of the UI. All changes to the Views are done by calling special functions called modfiers that wrap up the original View with the needful changes and return a View back.
+In the example below, we apply a few modifiers to a Text view to create the impression of a highlighted text.
+Text(&amp;#34;I ♥️ SwiftUI&amp;#34;) .</description>
+    </item>
     
     <item>
       <title>User Input in Swift commandline</title>
@@ -20,7 +32,7 @@
       <description>Last Run on XCODE 11.4 / Swift 5.2
 If you are writing a command line tool and need user input, the readLine() function can be used for it. It returns an optional
 let input = readLine() And, if you dont want the ending new line character, you can set the strippingNewline parameter to true.
-let input = readLine(strippingNewline: true)</description>
+let input = readLine(strippingNewline: true) </description>
     </item>
     
     <item>
@@ -111,17 +123,8 @@ func moveTraffic() { enumerateChildNodes(withName: &amp;#34;trafficCar&amp;#34;)
       
       <guid>https://amehta.github.io/posts/2019/03/wc-implementation-in-go-lang/</guid>
       <description>Continuing the theme of exploring Go Lang, today I will be writing a simple version of the Unix utility wc that displays the number of lines, words, and bytes contained in each input file.
-This exploration process will involve the following pieces * Getting a file name from command line. os * Opening the file for reading. os * Reading the contents of the file. bufio * Count the lines, words and bytes.</description>
-    </item>
-    
-    <item>
-      <title>Exploring filesystem in golang</title>
-      <link>https://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</link>
-      <pubDate>Wed, 06 Mar 2019 00:12:00 -0800</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2019/03/exploring-filesystem-in-golang/</guid>
-      <description>I am currently dabbling in GoLang and trying to get familiar with it&amp;rsquo;s syntax and style of programming. I also want to get familiar with the built-in packages for basic tasks witout having to google for basic features.
-In this post I will be working my way up to building a simple program that can list the files of a given path to it as a command line argument.</description>
+This exploration process will involve the following pieces
+ Getting a file name from command line. os Opening the file for reading. os Reading the contents of the file. bufio Count the lines, words and bytes. unicode Display the results.</description>
     </item>
     
   </channel>

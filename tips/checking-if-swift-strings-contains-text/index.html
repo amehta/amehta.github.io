@@ -29,7 +29,7 @@ let fruit1 = &amp;#34;apple&amp;#34; let fruit2 = &amp;#34;banana&amp;#34; let m
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -44,16 +44,14 @@ let fruit1 = &amp;#34;apple&amp;#34; let fruit2 = &amp;#34;banana&amp;#34; let m
 A simple way to check if a string contains a certain text is to use the method contains available to Strings.
 In the code snippet below, we will check if a string contains a certain text.
 let fruit1 = &#34;apple&#34; let fruit2 = &#34;banana&#34; let mySentence = &#34;An apple a day keeps the doctor away.&#34; mySentence.contains(fruit1) // result --&gt; True mySentence.contains(fruit2) // result --&gt; False If we need to check the string against multiple options, we will have to use a variation of the contains method that takes a closure.">
-
-
 <meta itemprop="datePublished" content="2020-05-01T12:11:26-07:00" />
 <meta itemprop="dateModified" content="2020-05-01T12:11:26-07:00" />
 <meta itemprop="wordCount" content="137">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="swift,string,swift5.2," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="swift,string,swift5.2," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="Checking if a Swift String contains a certain text"/>
@@ -133,24 +131,24 @@ let fruit1 = &#34;apple&#34; let fruit2 = &#34;banana&#34; let mySentence = &#34
 
             <div class="post-content">
                 <p>Last Run on XCODE 11.4 / Swift 5.2</p>
-
 <p>A simple way to check if a string contains a certain text is to use the method <code>contains</code> available to Strings.</p>
-
 <p>In the code snippet below, we will check if a string contains a certain text.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> fruit1 = <span style="color:#e6db74">&#34;apple&#34;</span>
 <span style="color:#66d9ef">let</span> fruit2 = <span style="color:#e6db74">&#34;banana&#34;</span>
 <span style="color:#66d9ef">let</span> mySentence = <span style="color:#e6db74">&#34;An apple a day keeps the doctor away.&#34;</span>
 
 mySentence.contains(fruit1) <span style="color:#75715e">// result --&gt; True</span>
-mySentence.contains(fruit2) <span style="color:#75715e">// result --&gt; False</span></code></pre></div>
-<p>If we need to check the string against multiple options, we will have
+mySentence.contains(fruit2) <span style="color:#75715e">// result --&gt; False</span>
+</code></pre></div><p>If we need to check the string against multiple options, we will have
 to use a variation of the <code>contains</code> method that takes a closure. Checkout the code snippet below.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> fruits1 = [<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;bananas&#34;</span>, <span style="color:#e6db74">&#34;grapes&#34;</span>]
 <span style="color:#66d9ef">let</span> fruits2 = [<span style="color:#e6db74">&#34;bananas&#34;</span>, <span style="color:#e6db74">&#34;grapes&#34;</span>]
 <span style="color:#66d9ef">let</span> mySentence = <span style="color:#e6db74">&#34;An apple a day keeps the doctor away.&#34;</span>
 
 fruits1.contains(<span style="color:#66d9ef">where</span>: mySentence.contains) <span style="color:#75715e">// result --&gt; True</span>
-fruits2.contains(<span style="color:#66d9ef">where</span>: mySentence.contains) <span style="color:#75715e">// result --&gt; False</span></code></pre></div>
+fruits2.contains(<span style="color:#66d9ef">where</span>: mySentence.contains) <span style="color:#75715e">// result --&gt; False</span>
+
+</code></pre></div>
             </div>
         </article>
 

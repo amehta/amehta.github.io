@@ -27,7 +27,7 @@ Why DHCP ? DHCP stands for dynamic host configuration protocol and so allows a d
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -40,16 +40,14 @@ Why DHCP ? DHCP stands for dynamic host configuration protocol and so allows a d
 <meta name="theme-color" content="#252627"><meta itemprop="name" content="How does DHCP work?">
 <meta itemprop="description" content="What is DHCP ? DHCP is a protocol used to provide an IP address to a device. It is also used to configure additional networking related parameters on the device like subnet mask, router, domain name, and dns server.
 Why DHCP ? DHCP stands for dynamic host configuration protocol and so allows a device to get an IP address without any manual intervention as long as the dhcp client is enabled and running on the device.">
-
-
 <meta itemprop="datePublished" content="2011-09-10T00:08:00-08:00" />
 <meta itemprop="dateModified" content="2011-09-10T00:08:00-08:00" />
 <meta itemprop="wordCount" content="532">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="DHCP," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="DHCP," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="How does DHCP work?"/>
@@ -129,46 +127,28 @@ Why DHCP ? DHCP stands for dynamic host configuration protocol and so allows a d
             
 
             <div class="post-content">
-                
-
-<h3 id="what-is-dhcp">What is DHCP ?</h3>
-
+                <h3 id="what-is-dhcp-">What is DHCP ?</h3>
 <p><code>DHCP</code> is a protocol used to provide an IP address to a device. It is also used to configure additional networking related parameters on the device like subnet mask, router, domain name, and dns server.</p>
-
-<h3 id="why-dhcp">Why DHCP ?</h3>
-
+<h3 id="why-dhcp-">Why DHCP ?</h3>
 <p><code>DHCP</code> stands for <code>dynamic host configuration protocol</code> and so allows a device to get an IP address without any manual intervention as long as the dhcp client is enabled and running on the device.</p>
-
 <p>Autoconfigure.
 No longer have to manually assign address and configurations on every device
 No conflicting IP addresses
 No longer have to track each and every ip address that was assigned.
 Reuse of IP addresses
 If an ip address is not in use, it can be used by some other device</p>
-
-<h3 id="how-it-works">How it works ?</h3>
-
+<h3 id="how-it-works-">How it works ?</h3>
 <p>Most devices on boot up do not have an IP address unless configured statically. To get to the network the device would need to first find a dhcp server to get an IP address. Since it does not know the address of the <strong>dhcp server</strong>, the <strong>dhcp client</strong> (running in the device) sends a UDP broadcast packet <code>(DHCP Discover)</code> in the network. All the devices in the network will see be able to see this packet and if there is one or more dhcp server<code>☨</code> in the network, they will respond back to the client with an offer <code>(DHCP offer)</code>. The <code>DHCP offer</code> includes an <strong>IP address</strong>, <strong>subnet mask</strong>, <strong>lease time</strong>, <strong>router</strong> and other parameters as configured on the server by an administrator or requested by the client.</p>
-
 <p>If multiple offers were received by the client, then it can decide which offer to accept and accordingly send a broadcast packet requesting <code>(DHCP Request)</code> an IP address from one of the offers. The dhcp server can identify themselves by the <code>&quot;transaction id&quot;</code> field in the request. All the other servers on receiving the request packet will withdraw their offers and return it back to their pool of addresses. The dhcp server that got selected by the client finally concludes the process by sending an acknowledgment <code>(DHCP Ack)</code> and any other information that the client may have requested.</p>
-
 <p><code>☨</code> If dhcp server is not in the same subnet, a dhcp relay-agent can be used to forward the request.</p>
-
-<h3 id="how-to-verify">How to verify ?</h3>
-
+<h3 id="how-to-verify-">How to verify ?</h3>
 <p>It&rsquo;s pretty easy to follow the <strong>DHCP Handshake</strong> on Wireshark. Since, all the handshake happens using broadcast packets, you can pretty much see any device trying to get an IP address using DHCP in your local network. Once you fire up Wireshark start taking live traces on your network interface. To filter out the other noise you can filter baded on a UDP port. <code>(DHCP server listens on port 67)</code>. Next take some other device (laptop, iPod, iPad,) in your local network and power it on. You should be able to immediately see the entire handshake on your Wireshark window. If you do not see the first two steps and only see the <code>DHCP Request</code>, and <code>DHCP Ack</code>, it probably means that your device already has a preconfigured ip address and is requesting the server to extends it&rsquo;s lease.</p>
-
 <h3 id="screenshot">Screenshot</h3>
-
 <p><code>Missing after porting blog to github pages</code></p>
-
 <h3 id="packet-flow">Packet Flow</h3>
-
-<p><a href="http://www.eventhelix.com/RealtimeMantra/Networking/DHCP.pdf" target="_blank">http://www.eventhelix.com/RealtimeMantra/Networking/DHCP.pdf</a></p>
-
+<p><a href="http://www.eventhelix.com/RealtimeMantra/Networking/DHCP.pdf">http://www.eventhelix.com/RealtimeMantra/Networking/DHCP.pdf</a></p>
 <h4 id="references">References</h4>
-
-<p><a href="http://tools.ietf.org/html/rfc2131" target="_blank">http://tools.ietf.org/html/rfc2131</a></p>
+<p><a href="http://tools.ietf.org/html/rfc2131">http://tools.ietf.org/html/rfc2131</a></p>
 
             </div>
         </article>

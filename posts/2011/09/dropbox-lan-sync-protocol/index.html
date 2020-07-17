@@ -26,7 +26,7 @@
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -38,16 +38,14 @@
 <link rel="shortcut icon" href="https://amehta.github.io/favicon.ico">
 <meta name="theme-color" content="#252627"><meta itemprop="name" content="Dropbox: LAN Sync Protocol">
 <meta itemprop="description" content="A year ago, I fired up wire shark on my home network to check out the packet flow of the DHCP process. I closed all my browser windows and other chat/im services, and still noticed a lot of chatter on the network. One that got my particular attention was a packet that was related to the popular service dropbox. I had not updated/edited any files recently, so was surprised to see it.">
-
-
 <meta itemprop="datePublished" content="2011-09-10T00:08:00-08:00" />
 <meta itemprop="dateModified" content="2011-09-10T00:08:00-08:00" />
 <meta itemprop="wordCount" content="528">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="dropbox,storage,DHCP,tcpdump," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="dropbox,storage,DHCP,tcpdump," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="Dropbox: LAN Sync Protocol"/>
@@ -126,16 +124,10 @@
             
 
             <div class="post-content">
-                
-
-<p>A year ago, I fired up wire shark on my home network to check out the packet flow of the <strong>DHCP process</strong>. I closed all my browser windows and other chat/im services, and still noticed a lot of chatter on the network. One that got my particular attention was a packet that was related to the popular service dropbox. I had not updated/edited any files recently, so was surprised to see it. I then decided to dig a little more on wire shark and with some google search came to the conclusion that it was a dropbox feature to sync data changes within the local network.</p>
-
+                <p>A year ago, I fired up wire shark on my home network to check out the packet flow of the <strong>DHCP process</strong>. I closed all my browser windows and other chat/im services, and still noticed a lot of chatter on the network. One that got my particular attention was a packet that was related to the popular service dropbox. I had not updated/edited any files recently, so was surprised to see it. I then decided to dig a little more on wire shark and with some google search came to the conclusion that it was a dropbox feature to sync data changes within the local network.</p>
 <p>Earlier today(yes 1 year later) I decided to spend some more time looking at the traces and try to figure out the details of the LAN sync protocol. After an hour or so I believe that the following steps are involved in Dropbox’s LAN syncing -</p>
-
 <h3 id="1-discovery-lan-sync-discovery-protocol">1. Discovery (LAN sync discovery protocol)</h3>
-
 <p>The dropnbox process running on your computer sends a UDP broadcast packet in the local network <code>every 30 seconds</code>. The source and destination port of the packet are set to <code>17500</code>. This UDP packet has some payload attached to it for identify itself to the receiver. It seems like a dictionary.</p>
-
 <pre><code>&quot;Text&quot;: {
     &quot;host_int&quot;: 14xxxx52,
     &quot;version&quot;: [1,8],
@@ -144,15 +136,12 @@
     &quot;namespaces&quot;: [263xxxx, 152xxxxx, 152*****] 
 } 
 </code></pre>
-
 <p>The Macbook was sending every <code>30 seconds</code>. However, on my Win7 laptop, it seemed like there was an initial rampup time where intervals started with 22 seconds and only after 5 mins they became 30 seconds.</p>
-
 <h3 id="2-exchange-data-lan-sync-protocol">2. Exchange Data (LAN sync protocol)</h3>
-
 <p>If all the dropbox clients have LAN sync enabled, then each of them should be able to understand and respond to the Discovery packet (assuming it&rsquo;s able to distinguish between different user accounts. I believe it uses namespaces to identify them uniquely). This response packet called <strong>DB LAN sync</strong> <code>(DB-LSP)</code> is a TCP packet where the dropbox clients exchange data.</p>
-
 <p>This first <code>DB-LSP</code> based TCP packet is destined to the other client on <code>port 17500</code>. The source port is an ephemeral port (say 49373) to which the receiver will send its reply. These are set to <code>type 23</code>. My guess is that these basically exchange information if there is data to be synced or not between the clients. If there is data to be synced, there will be some configurations that need to be exchanged to send them securely/encrypted across the local network. This is probably sent using <strong>DB-LSP</strong> packets set to <code>type 22</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Dropbox LSP Sync Protocol
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+Dropbox LSP Sync Protocol
 
    <span style="color:#ae81ff">0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">7</span>     <span style="color:#ae81ff">8</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">31</span>       <span style="color:#ae81ff">32</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">63</span>
 <span style="color:#f92672">+--------+-------------+--------------+</span>
@@ -171,11 +160,10 @@ TYPE:
 
 MAGIC:
     Decimal  Hex  
-    <span style="color:#ae81ff">769</span>      <span style="color:#ae81ff">0301</span></code></pre></div>
-<p>I quickly wrote this to share my notes on the analysis. Feel free to correct me in any of the assumptions. Also, pardon me for any spelling/grammar mistakes.</p>
+    <span style="color:#ae81ff">769</span>      <span style="color:#ae81ff">0301</span>
 
+</code></pre></div><p>I quickly wrote this to share my notes on the analysis. Feel free to correct me in any of the assumptions. Also, pardon me for any spelling/grammar mistakes.</p>
 <p><strong>PS</strong>: If you would like to experiment this on your home network, you could use the following filter to get rid of the noise.</p>
-
 <p><code>udp.port == 17500 or (ip.addr==mahcine1-ip and ip.addr==machine2-ip)</code></p>
 
             </div>

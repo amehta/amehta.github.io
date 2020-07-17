@@ -26,7 +26,7 @@
 
 
 
-<link rel="stylesheet" href="https://amehta.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
 
 
 
@@ -38,16 +38,14 @@
 <link rel="shortcut icon" href="https://amehta.github.io/favicon.ico">
 <meta name="theme-color" content="#252627"><meta itemprop="name" content="Traceroute implementation using scapy">
 <meta itemprop="description" content="Traceroute Traceroute is a network diagnostic utility used for displaying the path taken by a packet to it&rsquo;s destination. It uses the ICMP protocol to help traverse the path. Each IP packet has an 8 bit TTL field that gets decremented by every router on the path, to prevent the packet from indefinitely circulating the internet (or network). When the TTL value reaches zero an ICMP error &lsquo;Time To Live Exceeded&rsquo; is sent back to the sender.">
-
-
 <meta itemprop="datePublished" content="2011-09-28T00:08:00-08:00" />
 <meta itemprop="dateModified" content="2011-09-28T00:08:00-08:00" />
 <meta itemprop="wordCount" content="367">
+<meta itemprop="image" content="https://amehta.github.io"/>
 
 
 
-<meta itemprop="keywords" content="icmp,python,traceroute," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="icmp,python,traceroute," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://amehta.github.io"/>
 
 <meta name="twitter:title" content="Traceroute implementation using scapy"/>
@@ -126,22 +124,16 @@
             
 
             <div class="post-content">
-                
-
-<h3 id="traceroute">Traceroute</h3>
-
+                <h3 id="traceroute">Traceroute</h3>
 <p><code>Traceroute</code> is a network diagnostic utility used for displaying the path taken by a packet to it&rsquo;s destination. It uses the <code>ICMP</code> protocol to help traverse the path. Each IP packet has an <code>8 bit TTL</code> field that gets decremented by every router on the path, to prevent the packet from indefinitely circulating the internet (or network).  When the TTL value reaches zero  an ICMP error &lsquo;Time To Live Exceeded&rsquo; is sent back to the sender.  We can use this fact to our advantage by discovering all the hops between the source and the destination.</p>
-
 <pre><code>Example:
 
 MyPC --- R1 --- R2 --- R3 --- R4 --- FavoriteServer
 
-</code></pre>
-
-<p>In the above example, we can discover R1 by sending an <code>ICMP(echo-request)</code> based IP packet starting with a <code>TTL value of 1</code> destined to the server. R1 will decrement the TTL, thereby reducing it to zero, which in turn will trigger the <code>ICMP error message TTL exceeded</code>. This error message is sent to the sending machine as an ICMP based IP packet. The source field of this IP packet will have the IP address of R1. We can repeate this exercise by incrementing the TTL value till we no longer get the error message and instead get an <code>ICMP echo-reply message</code> from the destination.</p>
-
+</code></pre><p>In the above example, we can discover R1 by sending an <code>ICMP(echo-request)</code> based IP packet starting with a <code>TTL value of 1</code> destined to the server. R1 will decrement the TTL, thereby reducing it to zero, which in turn will trigger the <code>ICMP error message TTL exceeded</code>. This error message is sent to the sending machine as an ICMP based IP packet. The source field of this IP packet will have the IP address of R1. We can repeate this exercise by incrementing the TTL value till we no longer get the error message and instead get an <code>ICMP echo-reply message</code> from the destination.</p>
 <p>I used <code>Scapy</code> a python based packet crafting library to create a bare bones version of <code>traceroute</code> as per the explanation above.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Python Program 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+Python Program 
 
 <span style="color:#75715e">#traceroute.py</span>
 
@@ -167,8 +159,9 @@ MyPC --- R1 --- R2 --- R3 --- R4 --- FavoriteServer
         i<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-    main()</code></pre></div>
-<pre><code>Sample output 
+    main()
+
+</code></pre></div><pre><code>Sample output 
 
 apurva$ sudo python2.5 taceroute.py google.com
 WARNING: No route found for IPv6 destination :: (no default route?)
@@ -190,7 +183,6 @@ Received 4 packets, got 1 answers, remaining 0 packets
 9  72.14.232.136
 10  64.233.174.19
 </code></pre>
-
             </div>
         </article>
 
