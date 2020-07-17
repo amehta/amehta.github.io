@@ -6,10 +6,22 @@
     <description>Recent content in swift on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 15 Jul 2020 21:32:39 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2020 08:30:06 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Injecting custom behavior during editmode on a TextField in SwiftUI</title>
+      <link>https://amehta.github.io/tips/injecting-custom-behavior-during-editmode-on-textfield-in-swift-ui/</link>
+      <pubDate>Fri, 17 Jul 2020 08:30:06 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/injecting-custom-behavior-during-editmode-on-textfield-in-swift-ui/</guid>
+      <description>Last Run on XCODE 11.6 / Swift 5.2
+Definitions &amp;lsquo;TextField&amp;rsquo; is a View provided in SwiftUI for handling user entered input into an app. As per the documentaion, Apple defines it as
+&amp;ldquo;TextField - A control that displays an editable text interface.&amp;rdquo;
+struct TextFieldEditMode: View { @State private var someData = &amp;#34;&amp;#34; var body: some View { TextField(&amp;#34;Type something&amp;#34;, text: $someData) .font(.largeTitle) } } Initializers The &amp;lsquo;TextField&amp;rsquo; has four initializers, and the one we will be using in this post is the one listed below, that provides us with two additional parameters &amp;ldquo;onEditingChanged&amp;rdquo; and &amp;ldquo;onCommit&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>Custom View Modifiers in SwiftUI</title>

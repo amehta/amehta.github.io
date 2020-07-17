@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Apurva">
+<meta name="description"
+    content="Last Run on XCODE 11.6 / Swift 5.2
+Definitions &amp;lsquo;TextField&amp;rsquo; is a View provided in SwiftUI for handling user entered input into an app. As per the documentaion, Apple defines it as
+&amp;ldquo;TextField - A control that displays an editable text interface.&amp;rdquo;
+struct TextFieldEditMode: View { @State private var someData = &amp;#34;&amp;#34; var body: some View { TextField(&amp;#34;Type something&amp;#34;, text: $someData) .font(.largeTitle) } } Initializers The &amp;lsquo;TextField&amp;rsquo; has four initializers, and the one we will be using in this post is the one listed below, that provides us with two additional parameters &amp;ldquo;onEditingChanged&amp;rdquo; and &amp;ldquo;onCommit&amp;rdquo;." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://amehta.github.io/tips/injecting-custom-behavior-during-editmode-on-textfield-in-swift-ui/" />
+
+
+<title>
+    
+    Injecting custom behavior during editmode on a TextField in SwiftUI :: Tech Log  — Hello Friend NG Theme
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://amehta.github.io/main.min.892c0f338bdee1c53c5307fd8768ac9c25adbfa7e603667867601ccbe6be9b67.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://amehta.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://amehta.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://amehta.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://amehta.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://amehta.github.io/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="https://amehta.github.io/favicon.ico">
+<meta name="theme-color" content="#252627"><meta itemprop="name" content="Injecting custom behavior during editmode on a TextField in SwiftUI">
+<meta itemprop="description" content="Last Run on XCODE 11.6 / Swift 5.2
+Definitions &lsquo;TextField&rsquo; is a View provided in SwiftUI for handling user entered input into an app. As per the documentaion, Apple defines it as
+&ldquo;TextField - A control that displays an editable text interface.&rdquo;
+struct TextFieldEditMode: View { @State private var someData = &#34;&#34; var body: some View { TextField(&#34;Type something&#34;, text: $someData) .font(.largeTitle) } } Initializers The &lsquo;TextField&rsquo; has four initializers, and the one we will be using in this post is the one listed below, that provides us with two additional parameters &ldquo;onEditingChanged&rdquo; and &ldquo;onCommit&rdquo;.">
+<meta itemprop="datePublished" content="2020-07-17T08:30:06-07:00" />
+<meta itemprop="dateModified" content="2020-07-17T08:30:06-07:00" />
+<meta itemprop="wordCount" content="405">
+<meta itemprop="image" content="https://amehta.github.io"/>
+
+
+
+<meta itemprop="keywords" content="swift,swiftUI,swift5.2," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://amehta.github.io"/>
+
+<meta name="twitter:title" content="Injecting custom behavior during editmode on a TextField in SwiftUI"/>
+<meta name="twitter:description" content="Last Run on XCODE 11.6 / Swift 5.2
+Definitions &lsquo;TextField&rsquo; is a View provided in SwiftUI for handling user entered input into an app. As per the documentaion, Apple defines it as
+&ldquo;TextField - A control that displays an editable text interface.&rdquo;
+struct TextFieldEditMode: View { @State private var someData = &#34;&#34; var body: some View { TextField(&#34;Type something&#34;, text: $someData) .font(.largeTitle) } } Initializers The &lsquo;TextField&rsquo; has four initializers, and the one we will be using in this post is the one listed below, that provides us with two additional parameters &ldquo;onEditingChanged&rdquo; and &ldquo;onCommit&rdquo;."/>
+
+
+
+<meta property="article:section" content="programming" />
+
+<meta property="article:published_time" content="2020-07-17 08:30:06 -0700 PDT" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://amehta.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://amehta.github.io/about/">About</a></li><li><a href="https://amehta.github.io/posts/">Posts</a></li><li><a href="https://amehta.github.io/tips/">Tips</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://amehta.github.io/tips/injecting-custom-behavior-during-editmode-on-textfield-in-swift-ui/">Injecting custom behavior during editmode on a TextField in SwiftUI</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>Last Run on XCODE 11.6 / Swift 5.2</p>
+<h3 id="definitions">Definitions</h3>
+<p><a href="https://developer.apple.com/documentation/swiftui/textfield">&lsquo;TextField&rsquo;</a> is a View provided in SwiftUI for handling user entered input into an app. As per the documentaion, Apple defines it as</p>
+<p>&ldquo;TextField - A control that displays an editable text interface.&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">TextFieldEditMode</span>: View {
+    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> someData = <span style="color:#e6db74">&#34;&#34;</span>
+    <span style="color:#66d9ef">var</span> body: some View {
+        TextField(<span style="color:#e6db74">&#34;Type something&#34;</span>, text: <span style="color:#960050;background-color:#1e0010">$</span>someData)
+            .font(.largeTitle)
+    }
+}
+</code></pre></div><h3 id="initializers">Initializers</h3>
+<p>The <a href="https://developer.apple.com/documentation/swiftui/textfield">&lsquo;TextField&rsquo;</a> has four initializers, and the one we will be using in this post is the one listed below, that provides us with two additional parameters
+&ldquo;onEditingChanged&rdquo; and &ldquo;onCommit&rdquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">init</span>&lt;S&gt;(S, text: Binding&lt;String&gt;, onEditingChanged: (Bool) -&gt; Void, 
+    onCommit: () -&gt; Void)
+</code></pre></div><h3 id="implementation---basic">Implementation - Basic</h3>
+<p>The parameter onEditingChanged() takes a closure of the type &lsquo;(Bool) -&gt; Void&rsquo; that we as developers need to provide to inject additional functionality. The closure recives a bool value signifying if the TextField is in editMode. Interestingly, this closure also gets triggered on entering the return key.</p>
+<p>Lets get started. In the code below, I will update a Text View with the bool value recived by the onEditingChanged() method once we start entering into the field.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">TextFieldEditMode</span>: View {
+    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> someData = <span style="color:#e6db74">&#34;&#34;</span>
+    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> editFlag = <span style="color:#66d9ef">false</span>
+    <span style="color:#66d9ef">var</span> body: some View {
+        VStack {
+            Text(<span style="color:#e6db74">&#34;Editting Status: </span><span style="color:#e6db74">\(</span>editFlag.description<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+            TextField(<span style="color:#e6db74">&#34;Type something&#34;</span>, text: <span style="color:#960050;background-color:#1e0010">$</span>someData,
+                      onEditingChanged: { isBeingEditted <span style="color:#66d9ef">in</span>
+                        <span style="color:#66d9ef">self</span>.editFlag = isBeingEditted
+            })
+                .font(.largeTitle)
+        }
+    }
+}
+</code></pre></div><table>
+<thead>
+<tr>
+<th align="center">TextField not being editted.</th>
+<th align="center">TextField being editted.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img src="https://amehta.github.io/img/swift_ui_textfield_edit_off.png" alt="SwiftUI TextField Off"></td>
+<td align="center"><img src="https://amehta.github.io/img/swift_ui_textfield_edit_on.png" alt="SwiftUI TextField On"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="implementation---color-menu">Implementation - Color Menu</h3>
+<p>Let&rsquo;s make something more practical with our learnings. In the code below, we add a ColorMenu() View above the TextField to allow the user to change the foreground color of the input text.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> someData = <span style="color:#e6db74">&#34;&#34;</span>
+    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> editFlag = <span style="color:#66d9ef">false</span>
+    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> foregroundColor = Color.primary
+    <span style="color:#66d9ef">var</span> body: some View {
+        VStack {
+            <span style="color:#66d9ef">if</span> editFlag {
+                ColorMenu(foregroundColor: <span style="color:#960050;background-color:#1e0010">$</span>foregroundColor)
+            }
+            TextField(<span style="color:#e6db74">&#34;Type something&#34;</span>, text: <span style="color:#960050;background-color:#1e0010">$</span>someData,
+                      onEditingChanged: { isBeingEditted <span style="color:#66d9ef">in</span>
+                        <span style="color:#66d9ef">self</span>.editFlag = isBeingEditted
+            })
+                .font(.largeTitle)
+                .foregroundColor(foregroundColor)
+        }
+    }
+</code></pre></div><p>This is the basic implementation of the ColorMenu() View that we conditionally
+make visible in our app based on the edit status of the TextField.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ColorMenu</span>: View {
+    @Binding <span style="color:#66d9ef">var</span> foregroundColor: Color
+    <span style="color:#66d9ef">var</span> body: some View {
+        HStack {
+            Button(action: {<span style="color:#66d9ef">self</span>.foregroundColor = .red}) {
+                Image(systemName: <span style="color:#e6db74">&#34;circle.fill&#34;</span>).foregroundColor(.red)
+            }
+            Spacer()
+            Button(action: {<span style="color:#66d9ef">self</span>.foregroundColor = .yellow}) {
+                Image(systemName: <span style="color:#e6db74">&#34;circle.fill&#34;</span>).foregroundColor(.yellow)
+            }
+            Spacer()
+            Button(action: {<span style="color:#66d9ef">self</span>.foregroundColor = .blue}) {
+                Image(systemName: <span style="color:#e6db74">&#34;circle.fill&#34;</span>).foregroundColor(.blue)
+            }
+            Spacer()
+            Button(action: {<span style="color:#66d9ef">self</span>.foregroundColor = .green}) {
+                Image(systemName: <span style="color:#e6db74">&#34;circle.fill&#34;</span>).foregroundColor(.green)
+            }
+            Spacer()
+            Button(action: {<span style="color:#66d9ef">self</span>.foregroundColor = .orange}) {
+                Image(systemName: <span style="color:#e6db74">&#34;circle.fill&#34;</span>).foregroundColor(.orange)
+            }
+        }
+    }
+}
+</code></pre></div><p><img src="https://amehta.github.io/img/swift_ui_textfield_color_menu_demo.gif" alt="TextField onEditingChanged() Demo"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://amehta.github.io/tags/swift">swift</a></span><span class="tag"><a href="https://amehta.github.io/tags/swiftui">swiftUI</a></span><span class="tag"><a href="https://amehta.github.io/tags/swift5.2">swift5.2</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://amehta.github.io">Apurva Mehta</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://amehta.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://amehta.github.io/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-144111621-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>

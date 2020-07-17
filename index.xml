@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>Injecting custom behavior during editmode on a TextField in SwiftUI</title>
+      <link>https://amehta.github.io/tips/injecting-custom-behavior-during-editmode-on-textfield-in-swift-ui/</link>
+      <pubDate>Fri, 17 Jul 2020 08:30:06 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/injecting-custom-behavior-during-editmode-on-textfield-in-swift-ui/</guid>
+      <description>Last Run on XCODE 11.6 / Swift 5.2
+Definitions &amp;lsquo;TextField&amp;rsquo; is a View provided in SwiftUI for handling user entered input into an app. As per the documentaion, Apple defines it as
+&amp;ldquo;TextField - A control that displays an editable text interface.&amp;rdquo;
+struct TextFieldEditMode: View { @State private var someData = &amp;#34;&amp;#34; var body: some View { TextField(&amp;#34;Type something&amp;#34;, text: $someData) .font(.largeTitle) } } Initializers The &amp;lsquo;TextField&amp;rsquo; has four initializers, and the one we will be using in this post is the one listed below, that provides us with two additional parameters &amp;ldquo;onEditingChanged&amp;rdquo; and &amp;ldquo;onCommit&amp;rdquo;.</description>
+    </item>
+    
+    <item>
       <title>Custom View Modifiers in SwiftUI</title>
       <link>https://amehta.github.io/tips/custom-view-modifiers-in-swift-ui/</link>
       <pubDate>Wed, 15 Jul 2020 21:32:39 -0700</pubDate>
@@ -114,17 +126,6 @@ If you choose to use my Service, then you agree to the collection and use of inf
       <description>In this blog post, I will show you how we can enhance our images using colored filters and add border backgrounds.
    Original Original w/ color filter Original w/ color border           Let&amp;rsquo;s get started.
 1. Simple color filter Lets start with first creating a color filter - an image with just a single color. This is as simple as creating a 3-D array and filling each pixel with the same value.</description>
-    </item>
-    
-    <item>
-      <title>Adding text to an image using OpenCV and Python</title>
-      <link>https://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</link>
-      <pubDate>Thu, 22 Aug 2019 23:08:06 -0700</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</guid>
-      <description>In a series of upcoming blog posts, I will be using OpenCV to manipulate images. In this post, I will be adding text to an image (below), I took of a Dervish monastery at the beautiful village of Blagaj in Bosnia.
-   Resized Original Resized Original w/ text          Lets get started.
- Read Image Resize Image by aspect ratio Add text to resized image Save resized image with text  1.</description>
     </item>
     
   </channel>
