@@ -6,10 +6,22 @@
     <description>Recent content in programming on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 17 Jul 2020 08:30:06 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2020 22:04:00 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Usage of CaseIterable in Swift Enum</title>
+      <link>https://amehta.github.io/tips/usage-of-case-iterable-in-swift/</link>
+      <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/usage-of-case-iterable-in-swift/</guid>
+      <description>Last Run on XCODE 11.6 / Swift 5.2
+Definition CaseIterable is a protocol in Swift, that typically lets an enumeration to provide all of its cases as a collection.
+Lets look at a simple example from my RoadRage car game. This is an enum type called TrafficType listing the cases of traffic/obstacle Sprites generated in my RoadRage car game.
+enum TrafficType: UInt32 { case Police case Ambulance case FireTruck case Van case SportsCar case Taxi } In my game I would like to find out the total count of the TrafficType entities.</description>
+    </item>
     
     <item>
       <title>Injecting custom behavior during editmode on a TextField in SwiftUI</title>
@@ -115,17 +127,6 @@ func moveTraffic() { enumerateChildNodes(withName: &amp;#34;trafficCar&amp;#34;)
       <description>In this blog post, I will show you how we can enhance our images using colored filters and add border backgrounds.
    Original Original w/ color filter Original w/ color border           Let&amp;rsquo;s get started.
 1. Simple color filter Lets start with first creating a color filter - an image with just a single color. This is as simple as creating a 3-D array and filling each pixel with the same value.</description>
-    </item>
-    
-    <item>
-      <title>Adding text to an image using OpenCV and Python</title>
-      <link>https://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</link>
-      <pubDate>Thu, 22 Aug 2019 23:08:06 -0700</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2019/08/adding-text-to-an-image-using-opencv-and-python/</guid>
-      <description>In a series of upcoming blog posts, I will be using OpenCV to manipulate images. In this post, I will be adding text to an image (below), I took of a Dervish monastery at the beautiful village of Blagaj in Bosnia.
-   Resized Original Resized Original w/ text          Lets get started.
- Read Image Resize Image by aspect ratio Add text to resized image Save resized image with text  1.</description>
     </item>
     
   </channel>

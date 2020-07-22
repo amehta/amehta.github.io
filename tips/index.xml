@@ -6,10 +6,22 @@
     <description>Recent content in Tips on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 17 Jul 2020 08:30:06 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2020 22:04:00 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Usage of CaseIterable in Swift Enum</title>
+      <link>https://amehta.github.io/tips/usage-of-case-iterable-in-swift/</link>
+      <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/usage-of-case-iterable-in-swift/</guid>
+      <description>Last Run on XCODE 11.6 / Swift 5.2
+Definition CaseIterable is a protocol in Swift, that typically lets an enumeration to provide all of its cases as a collection.
+Lets look at a simple example from my RoadRage car game. This is an enum type called TrafficType listing the cases of traffic/obstacle Sprites generated in my RoadRage car game.
+enum TrafficType: UInt32 { case Police case Ambulance case FireTruck case Van case SportsCar case Taxi } In my game I would like to find out the total count of the TrafficType entities.</description>
+    </item>
     
     <item>
       <title>Injecting custom behavior during editmode on a TextField in SwiftUI</title>

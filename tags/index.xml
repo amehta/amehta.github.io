@@ -6,15 +6,33 @@
     <description>Recent content in Tags on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 17 Jul 2020 08:30:06 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2020 22:04:00 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>enum</title>
+      <link>https://amehta.github.io/tags/enum/</link>
+      <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tags/enum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>protocol</title>
+      <link>https://amehta.github.io/tags/protocol/</link>
+      <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tags/protocol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>swift</title>
       <link>https://amehta.github.io/tags/swift/</link>
-      <pubDate>Fri, 17 Jul 2020 08:30:06 -0700</pubDate>
+      <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
       
       <guid>https://amehta.github.io/tags/swift/</guid>
       <description></description>
@@ -23,7 +41,7 @@
     <item>
       <title>swift5.2</title>
       <link>https://amehta.github.io/tags/swift5.2/</link>
-      <pubDate>Fri, 17 Jul 2020 08:30:06 -0700</pubDate>
+      <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
       
       <guid>https://amehta.github.io/tags/swift5.2/</guid>
       <description></description>
@@ -80,24 +98,6 @@
       <pubDate>Mon, 11 Mar 2019 00:21:00 -0800</pubDate>
       
       <guid>https://amehta.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>unix</title>
-      <link>https://amehta.github.io/tags/unix/</link>
-      <pubDate>Mon, 11 Mar 2019 00:21:00 -0800</pubDate>
-      
-      <guid>https://amehta.github.io/tags/unix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ls</title>
-      <link>https://amehta.github.io/tags/ls/</link>
-      <pubDate>Thu, 28 Feb 2019 00:08:00 -0800</pubDate>
-      
-      <guid>https://amehta.github.io/tags/ls/</guid>
       <description></description>
     </item>
     
