@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>swift5.3 on Tech Log</title>
+    <link>https://amehta.github.io/tags/swift5.3/</link>
+    <description>Recent content in swift5.3 on Tech Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 04 Aug 2020 20:59:37 -0700</lastBuildDate>
+    
+	<atom:link href="https://amehta.github.io/tags/swift5.3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Component Information From Date</title>
+      <link>https://amehta.github.io/tips/getting-component-information-from-date/</link>
+      <pubDate>Tue, 04 Aug 2020 20:59:37 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/getting-component-information-from-date/</guid>
+      <description>Last Run on XCODE 11.6 / Swift 5.2
+Last Run on XCODE 12.0 beta 4 / Swift 5.3
+Definition Calendar - A definition of the relationships between calendar units (such as eras, years, and weekdays) and absolute points in time, providing features for calculation and comparison of dates.
+The Calendar is a value type (struct) that provides with functions that can assist us in decoupling the component information from a given date like the year, month, day of week etc.</description>
+    </item>
+    
+  </channel>
+</rss>

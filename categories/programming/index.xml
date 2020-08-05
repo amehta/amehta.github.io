@@ -6,10 +6,22 @@
     <description>Recent content in programming on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 21 Jul 2020 22:04:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2020 20:59:37 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Getting Component Information From Date</title>
+      <link>https://amehta.github.io/tips/getting-component-information-from-date/</link>
+      <pubDate>Tue, 04 Aug 2020 20:59:37 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/getting-component-information-from-date/</guid>
+      <description>Last Run on XCODE 11.6 / Swift 5.2
+Last Run on XCODE 12.0 beta 4 / Swift 5.3
+Definition Calendar - A definition of the relationships between calendar units (such as eras, years, and weekdays) and absolute points in time, providing features for calculation and comparison of dates.
+The Calendar is a value type (struct) that provides with functions that can assist us in decoupling the component information from a given date like the year, month, day of week etc.</description>
+    </item>
     
     <item>
       <title>Usage of CaseIterable in Swift Enum</title>
@@ -116,17 +128,6 @@ func moveTraffic() { enumerateChildNodes(withName: &amp;#34;trafficCar&amp;#34;)
       <description>We often take pictures of menus, receipts, and message boards etc. They are often not aligned properly. In this post, I will show you how to select the pertinet parts and allign them as correctly as possible.
    Original Processed          Let&amp;rsquo;s get started.
 1. Find the anchor points We will first load the image of a newspaper clipping containing the sudoku puzzle.</description>
-    </item>
-    
-    <item>
-      <title>Create and apply simple filters to an image using OpenCV and Python</title>
-      <link>https://amehta.github.io/posts/2019/09/create-and-apply-simple-filters-to-an-image-using-opencv-and-python/</link>
-      <pubDate>Mon, 16 Sep 2019 13:55:46 -0500</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2019/09/create-and-apply-simple-filters-to-an-image-using-opencv-and-python/</guid>
-      <description>In this blog post, I will show you how we can enhance our images using colored filters and add border backgrounds.
-   Original Original w/ color filter Original w/ color border           Let&amp;rsquo;s get started.
-1. Simple color filter Lets start with first creating a color filter - an image with just a single color. This is as simple as creating a 3-D array and filling each pixel with the same value.</description>
     </item>
     
   </channel>

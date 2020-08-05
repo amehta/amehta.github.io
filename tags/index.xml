@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Tech Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 21 Jul 2020 22:04:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2020 20:59:37 -0700</lastBuildDate>
     
 	<atom:link href="https://amehta.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>foundation</title>
+      <link>https://amehta.github.io/tags/foundation/</link>
+      <pubDate>Tue, 04 Aug 2020 20:59:37 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tags/foundation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swift</title>
+      <link>https://amehta.github.io/tags/swift/</link>
+      <pubDate>Tue, 04 Aug 2020 20:59:37 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tags/swift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swift5.2</title>
+      <link>https://amehta.github.io/tags/swift5.2/</link>
+      <pubDate>Tue, 04 Aug 2020 20:59:37 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tags/swift5.2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swift5.3</title>
+      <link>https://amehta.github.io/tags/swift5.3/</link>
+      <pubDate>Tue, 04 Aug 2020 20:59:37 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tags/swift5.3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>enum</title>
@@ -26,24 +62,6 @@
       <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
       
       <guid>https://amehta.github.io/tags/protocol/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>swift</title>
-      <link>https://amehta.github.io/tags/swift/</link>
-      <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
-      
-      <guid>https://amehta.github.io/tags/swift/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>swift5.2</title>
-      <link>https://amehta.github.io/tags/swift5.2/</link>
-      <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
-      
-      <guid>https://amehta.github.io/tags/swift5.2/</guid>
       <description></description>
     </item>
     
@@ -80,24 +98,6 @@
       <pubDate>Wed, 25 Sep 2019 13:53:05 -0500</pubDate>
       
       <guid>https://amehta.github.io/tags/opencv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://amehta.github.io/tags/python/</link>
-      <pubDate>Wed, 25 Sep 2019 13:53:05 -0500</pubDate>
-      
-      <guid>https://amehta.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://amehta.github.io/tags/golang/</link>
-      <pubDate>Mon, 11 Mar 2019 00:21:00 -0800</pubDate>
-      
-      <guid>https://amehta.github.io/tags/golang/</guid>
       <description></description>
     </item>
     

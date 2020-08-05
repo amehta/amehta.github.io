@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>Getting Component Information From Date</title>
+      <link>https://amehta.github.io/tips/getting-component-information-from-date/</link>
+      <pubDate>Tue, 04 Aug 2020 20:59:37 -0700</pubDate>
+      
+      <guid>https://amehta.github.io/tips/getting-component-information-from-date/</guid>
+      <description>Last Run on XCODE 11.6 / Swift 5.2
+Last Run on XCODE 12.0 beta 4 / Swift 5.3
+Definition Calendar - A definition of the relationships between calendar units (such as eras, years, and weekdays) and absolute points in time, providing features for calculation and comparison of dates.
+The Calendar is a value type (struct) that provides with functions that can assist us in decoupling the component information from a given date like the year, month, day of week etc.</description>
+    </item>
+    
+    <item>
       <title>Usage of CaseIterable in Swift Enum</title>
       <link>https://amehta.github.io/tips/usage-of-case-iterable-in-swift/</link>
       <pubDate>Tue, 21 Jul 2020 22:04:00 -0700</pubDate>
@@ -116,17 +128,6 @@ func moveTraffic() { enumerateChildNodes(withName: &amp;#34;trafficCar&amp;#34;)
       <description>Privacy Policy Apurva Mehta built the Space Jam app as an Ad Supported app. This SERVICE is provided by at no cost and is intended for use as is.
 This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
 If you choose to use my Service, then you agree to the collection and use of information in relation to this policy.</description>
-    </item>
-    
-    <item>
-      <title>Select Sections From Images of Newspaper clippings, receipts etc Using Opencv and Python</title>
-      <link>https://amehta.github.io/posts/2019/09/select-sections-from-images-of-newspaper-clippings-receipts-etc-using-opencv-and-python/</link>
-      <pubDate>Wed, 25 Sep 2019 13:53:05 -0500</pubDate>
-      
-      <guid>https://amehta.github.io/posts/2019/09/select-sections-from-images-of-newspaper-clippings-receipts-etc-using-opencv-and-python/</guid>
-      <description>We often take pictures of menus, receipts, and message boards etc. They are often not aligned properly. In this post, I will show you how to select the pertinet parts and allign them as correctly as possible.
-   Original Processed          Let&amp;rsquo;s get started.
-1. Find the anchor points We will first load the image of a newspaper clipping containing the sudoku puzzle.</description>
     </item>
     
   </channel>
